@@ -163,7 +163,7 @@ sections:
       - title: Will it be held online ?
         title_align: left
         content: >-
-          The first phase will be held online and it will be hosted on Kaggle. The final round will be held on the premises of Department of CSE, BUET
+          The first phase will be held online and hosted on Kaggle.  The competition link will be available on July 1, 2022. The final round will be held on the premises of the Department of CSE, BUET
         content_align: left
 
       - title: Are the participants required to attend the competition physically ?
