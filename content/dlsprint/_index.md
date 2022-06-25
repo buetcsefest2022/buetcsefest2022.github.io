@@ -1,11 +1,11 @@
 ---
-title: DL Sprint 2022
+title: DL Sprint
 sections:
   - type: header_menu
     
   - type: hero_section
-    title: BUET CSE Fest - Deep Learning Sprint 2022
-    subtitle: Presented by Bengali.AI Community
+    title: "Deep Learning Sprint 2022"
+    subtitle: Presented by BUET CSE Fest 2022 & Bengali.AI Community
     content: July 1 - July 29, 2022
     actions:
       - label: Rules
@@ -83,7 +83,7 @@ sections:
         content: >-
           <table>
             <tr>
-              <th>#</th>  <th>Location</th>                 <th>Date & Time</th>  
+              <th></th>  <th>Location</th>                 <th>Date & Time</th>  
             </tr>
             <tr>
               <td>Phase 1</td>  <td>Kaggle</td>             <td>July 1 - July 25, 2022</td>
@@ -119,7 +119,7 @@ sections:
         image_alt: Bengali AI Community logo
         image_align: center
         title: "Bengali.AI Community"
-        subtitle: "Presenter"
+        subtitle: "Partner"
         title_align: center
 
       - image: images/dlsprint/logo/incepta.png
@@ -136,7 +136,6 @@ sections:
         subtitle: "Co-host"
         title_align: center
 
-
     grid_cols: four
     grid_gap_horiz: large
     grid_gap_vert: large
@@ -147,13 +146,12 @@ sections:
 
   - type: grid_section
     title: Frequently Asked Questions
-    subtitle: Our vision
     grid_items:
 
       - title: What is the application process ?
         title_align: left
         content: >-
-          Please register through this link **[give link]**
+          Please register through this **[form.](https://docs.google.com/forms/d/e/1FAIpQLSflaPGAVZImwuDSFiwZ7rrIs7F0nzptntbYHcrHvrfSZ2I1KA/viewform)**
         content_align: left
       
       - title: Is there any age limit ?
@@ -221,18 +219,14 @@ sections:
     grid_items:
       - title: Address
         content: |-
-          1234 Some St.<br/>
-          Some City, ST 12345<br/>
-          [1-234-556-7890](tel:+12345567890)<br/>
-          [email@example.com](mailto:email@example.com)<br/>
+          Department of CSE, BUET <br>
+          Bangladesh University of Engineering & Technology, Dhaka-1100 <br>
 
-          **Time:** 9:30 AM to 3:30 PM
+          **Email Us:** buetcsefest2022@gmail.com <br>
+          **Website:** https://buetcsefest2022.com
       - title: Follow Us
         content: |-
-          [Youtube](https://www.youtube.com/)<br/>
-          [Medium](https://medium.com/)<br/>
-          [Facebook](https://www.facebook.com/)<br/>
-          [Twitter](https://twitter.com/home)<br/>
+          [Facebook](https://www.facebook.com/buetcsefest2022)<br/>
     grid_cols: two
     grid_gap_horiz: medium
     grid_gap_vert: large
@@ -241,31 +235,6 @@ sections:
     padding_top: medium
     padding_bottom: medium
     background_color: none
-# seo:
-#   title: "BUET CSE Fest 2022"
-#   description: The preview of the Event theme
-#   extra:
-#     - name: 'og:type'
-#       value: website
-#       keyName: property
-#     - name: 'og:title'
-#       value: Stackbit Event Theme
-#       keyName: property
-#     - name: 'og:description'
-#       value: The preview of the Event theme
-#       keyName: property
-#     - name: 'og:image'
-#       value: images/feature-3.jpg
-#       keyName: property
-#       relativeUrl: true
-#     - name: 'twitter:card'
-#       value: summary_large_image
-#     - name: 'twitter:title'
-#       value: Stackbit Event Theme
-#     - name: 'twitter:description'
-#       value: The preview of the Event theme
-#     - name: 'twitter:image'
-#       value: images/feature-3.jpg
-#       relativeUrl: true
+
 layout: advanced
 ---

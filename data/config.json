@@ -7,16 +7,11 @@
     "base_font": "sans-serif",
     "header": {
         "title": "Event",
-        "logo": "images/logo.svg",
+        "logo": "images/fest-logo.png",
         "logo_alt": "Fest Logo",
         "has_primary_nav": false,
         "has_secondary_nav": true,
         "secondary_nav_links": [
-            {
-                "label": "IUPC",
-                "url": "/iupc",
-                "style": "link"
-            },
             {
                 "label": "DL Sprint",
                 "url": "/dlsprint",
