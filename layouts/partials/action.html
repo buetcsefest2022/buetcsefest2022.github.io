@@ -1,0 +1,15 @@
+{{ $action := .action }}
+{{ $action_style := $action.style | default "link" }}
+{{ $action_icon_pos := $action.icon_position | default "right" }}
+<a href="{{ $action.url | relURL }}"
+	{{ if $action.new_window }} target="_blank"{{ end }}
+	{{ if or $action.new_window $action.no_follow }} rel="{{ if $action.new_window }}noopener {{ end }}{{ if $action.no_follow }}nofollow{{ end }}"{{ end }}
+	class="{{ if or (or (eq $action_style "primary") (eq $action_style "secondary")) $action.has_icon }}btn{{ end }}{{ if eq $action_style "primary" }} btn--primary{{ end }}{{ if eq $action_style "secondary" }} btn--secondary{{ end }}{{ if and $action.has_icon (eq $action_icon_pos "center") }} btn--icon{{ end }}{{ if and $action.has_icon (eq $action_style "link") }} btn--clear{{ end }}">
+	{{ if $action.has_icon }}
+		{{ $include_dict := dict "icon" $action.icon }}
+		{{ partial "icon.html" $include_dict }}
+		<span class="{{ if eq $action_icon_pos "right" }}order-first{{ end }}{{ if eq $action_icon_pos "center" }} sr-only{{ end }}">{{ $action.label }}</span>
+	{{ else }}
+		{{ $action.label }}
+	{{ end }}
+</a>

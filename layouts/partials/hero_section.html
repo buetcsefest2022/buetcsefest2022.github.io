@@ -1,0 +1,79 @@
+{{ $section := .section }}
+
+{{ $padding_top := $section.padding_top | default "medium" }}
+{{ $padding_bottom := $section.padding_bottom | default "medium" }}
+{{ $align_x := $section.align | default "center" }}
+
+{{ $bg_color := $section.background_color | default "none" }}
+{{ $bg_img_opacity_pct := $section.background_image_opacity | default 100 }}
+{{ $bg_img_opacity := mul $bg_img_opacity_pct 0.01 }}
+{{ $bg_img_size := $section.background_image_size | default "cover" }}
+{{ $bg_img_position := $section.background_image_position | default "center center" }}
+{{ $bg_img_repeat := $section.background_image_repeat | default "no-repeat" }}
+
+{{ $has_text := false }}
+{{ if or (or (or $section.title $section.subtitle) $section.content) $section.actions }}
+	{{ $has_text = true }}
+{{ end }}
+
+{{ $has_media := false }}
+{{ if or $section.image $section.video_embed_html }}
+	{{ $has_media = true }}
+{{ end }}
+{{ $media_width := $section.media_width | default "fifty" }}
+{{ $media_pos := $section.media_position | default "top" }}
+{{ if or (eq $has_media false) (eq $has_text false) }}
+	{{ $media_pos = "top" }}
+{{ end }}
+
+{{ $is_horiz := false }}
+{{ if or (eq $media_pos "left") (eq $media_pos "right") }}
+	{{ $is_horiz = true }}
+{{ end }}
+
+{{ $is_vert := false }}
+{{ if or (eq $media_pos "top") (eq $media_pos "bottom") }}
+	{{ $is_vert = true }}
+{{ end }}
+
+<section class="section hero{{ if $section.has_border }} has-border{{ end }}{{ if $section.background_image }} has-cover{{ end }}{{ if eq $bg_color "none" }} bg-none{{ end }}{{ if eq $bg_color "primary" }} bg-primary{{ end }}{{ if eq $bg_color "secondary" }} bg-secondary{{ end }}{{ if eq $padding_top "small" }} pt-4{{ end }}{{ if or (eq $padding_top "medium") (eq $padding_top "large") }} pt-6{{ end }}{{ if eq $padding_top "large" }} pt-md-7{{ end }}{{ if eq $padding_bottom "small" }} pb-4{{ end }}{{ if or (eq $padding_bottom "medium") (eq $padding_bottom "large") }} pb-6{{ end }}{{ if eq $padding_bottom "large" }} pb-md-7{{ end }}">
+
+	{{ if $section.background_image }}
+	<div class="cover-img" style="background-image: url('{{ $section.background_image | relURL }}'); opacity: {{ $bg_img_opacity }}; background-size: {{ $bg_img_size }}; background-repeat: {{ $bg_img_repeat }}; background-position: {{ $bg_img_position }}"></div>
+	{{ end }}
+
+	<div class="container{{ if $is_vert }} container--medium{{ end }}">
+		<div class="hero__content grid items-center">
+			{{ if $has_media }}
+			<div class="hero__media my-2 cell-12{{ if and (and $is_horiz $has_text) (eq $media_width "fourty") }} cell-md-5{{ end }}{{ if and (and $is_horiz $has_text) (eq $media_width "fifty") }} cell-md-6{{ end }}{{ if and (and $is_horiz $has_text) (eq $media_width "sixty") }} cell-md-7{{ end }}">
+				{{ if $section.video_embed_html }}
+					{{ $section.video_embed_html | safeHTML }}
+				{{ else }}
+					<img src="{{ $section.image | relURL }}" alt="{{ $section.image_alt }}" class="{{ if eq $align_x "center" }}mx-auto{{ end }}{{ if eq $align_x "right" }} ml-auto{{ end }}" />
+				{{ end }}
+			</div>
+			{{ end }}
+			{{ if $has_text }}
+			<div class="hero__body my-2 cell-12{{ if and (and $is_horiz $has_media) (eq $media_width "fourty") }} cell-md-7{{ end }}{{ if and (and $is_horiz $has_media) (eq $media_width "fifty") }} cell-md-6{{ end }}{{ if and (and $is_horiz $has_media) (eq $media_width "sixty") }} cell-md-5{{ end }}{{ if and $has_media (eq $media_pos "right") }} order-md-first{{ end }}{{ if and $has_media (eq $media_pos "bottom") }} order-first{{ end }}{{ if eq $align_x "center" }} text-center{{ end }}{{ if eq $align_x "right" }} text-right{{ end }}">
+				{{ if $section.title }}
+				<h1 class="hero__title">{{ $section.title }}</h1>
+				{{ end }}
+				{{ if $section.subtitle }}
+				<p class="hero__subtitle">{{ $section.subtitle }}</p>
+				{{ end }}
+				{{ if $section.content }}
+				<div class="hero__copy">
+					{{ partial "markdownify-block" $section.content }}
+				</div>
+				{{ end }}
+				{{ if $section.actions }}
+				<div class="hero__actions btn-group{{ if eq $align_x "center" }} justify-center{{ end }}{{ if eq $align_x "right" }} justify-end{{ end }}">
+					{{ $include_dict := dict "actions" $section.actions }}
+					{{ partial "section_actions.html" $include_dict }}
+				</div>
+				{{ end }}
+			</div>
+			{{ end }}
+		</div>
+	</div>
+</section>

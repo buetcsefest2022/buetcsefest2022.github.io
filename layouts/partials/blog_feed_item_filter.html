@@ -1,0 +1,34 @@
+{{ $section := .blog_feed_section }}
+{{ $section_author := .section_author }}
+{{ $section_category := .section_category }}
+{{ $section_tag := .section_tag }}
+{{ $post := .post_page }}
+
+{{ if $section_author }}
+	{{ if $post.Params.author }}
+		{{ $post_author := getJSON $post.Params.author }}
+		{{ if eq $post_author.id $section_author.id }}
+			{{ $include_dict := dict "blog_feed_section" $section "post_page" $post }}
+			{{ partial "blog_post_feed_item.html" $include_dict }}
+		{{ end }}
+	{{ end }}
+{{ else if $section_category }}
+	{{ range $category := $post.Params.categories }}
+		{{ $post_category := getJSON $category }}
+		{{ if eq $post_category.id $section_category.id }}
+			{{ $include_dict := dict "blog_feed_section" $section "post_page" $post }}
+			{{ partial "blog_post_feed_item.html" $include_dict }}
+		{{ end }}
+	{{ end }}
+{{ else if $section_tag }}
+	{{ range $tag := $post.Params.tags }}
+		{{ $post_tag := getJSON $tag }}
+		{{ if eq $post_tag.id $section_tag.id }}
+			{{ $include_dict := dict "blog_feed_section" $section "post_page" $post }}
+			{{ partial "blog_post_feed_item.html" $include_dict }}
+		{{ end }}
+	{{ end }}
+{{ else }}
+	{{ $include_dict := dict "blog_feed_section" $section "post_page" $post }}
+	{{ partial "blog_post_feed_item.html" $include_dict }}
+{{ end }}

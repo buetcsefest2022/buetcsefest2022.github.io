@@ -1,0 +1,9 @@
+{{ $tags := .tags }}
+{{ range $tag := $tags }}
+	{{ $tag_data := getJSON $tag }}
+	{{ if $tag_data.link }}
+		<a class="mr-1" href="{{ $tag_data.link | relURL }}">{{ $tag_data.title }}</a>
+	{{ else }}
+		<span class="mr-1">{{ $tag_data.title }}</span>
+	{{ end }}
+{{ end }}

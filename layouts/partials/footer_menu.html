@@ -1,0 +1,9 @@
+{{ $menu := .footer_menu }}
+<ul class="menu">
+{{ range $menu_item := $menu }}
+	<li class="menu__item mb-1">
+		{{ $include_dict := dict "action" $menu_item }}
+		{{ partial "action.html" $include_dict }}
+	</li>
+{{ end }}
+</ul>

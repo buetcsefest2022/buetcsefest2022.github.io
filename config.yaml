@@ -1,0 +1,13 @@
+title: BUET CSE Fest 2022
+baseURL: /
+taxonomies:
+  stub: stub
+disableKinds:
+  - RSS
+  - taxonomy
+  - taxonomyTerm
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+publishDir: docs

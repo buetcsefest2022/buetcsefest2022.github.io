@@ -1,0 +1,69 @@
+{{ $section := .section }}
+{{ $feature := .feature }}
+
+{{ $padding_y := $section.feature_padding_vert | default "medium" }}
+{{ $align_x := $feature.align | default "left" }}
+
+{{ $has_text := false }}
+{{ if or (or (or $feature.title $feature.subtitle) $feature.content) $feature.actions }}
+	{{ $has_text = true }}
+{{ end }}
+
+{{ $has_media := false }}
+{{ if or $feature.image $feature.video_embed_html }}
+	{{ $has_media = true }}
+{{ end }}
+{{ $media_width := $feature.media_width | default "fifty" }}
+{{ $media_pos := $feature.media_position | default "top" }}
+{{ if or (eq $has_media false) (eq $has_text false) }}
+	{{ $media_pos = "top" }}
+{{ end }}
+
+{{ $is_horiz := false }}
+{{ if or (eq $media_pos "left") (eq $media_pos "right") }}
+	{{ $is_horiz = true }}
+{{ end }}
+
+{{ $is_vert := false }}
+{{ if or (eq $media_pos "top") (eq $media_pos "bottom") }}
+	{{ $is_vert = true }}
+{{ end }}
+
+<div class="feature{{ if $is_vert }} maxw-medium{{ end }}{{ if $is_vert }} mx-auto{{ end }}{{ if eq $padding_y "small" }} py-0{{ end }}{{ if ne $padding_y "small" }} py-1{{ end }}{{ if eq $padding_y "large" }} py-sm-3{{ end }}">
+	<div class="item__content grid items-center">
+		{{ if $has_media }}
+		<div class="feature__media my-2 cell-12{{ if and (and $is_horiz $has_text) (eq $media_width "thirty-three") }} cell-md-4{{ end }}{{ if and (and $is_horiz $has_text) (eq $media_width "fourty") }} cell-md-5{{ end }}{{ if and (and $is_horiz $has_text) (eq $media_width "fifty") }} cell-md-6{{ end }}{{ if and (and $is_horiz $has_text) (eq $media_width "sixty") }} cell-md-7{{ end }}">
+			{{ if $feature.video_embed_html }}
+				{{ $feature.video_embed_html | safeHTML }}
+			{{ else }}
+				<img src="{{ $feature.image | relURL }}" alt="{{ $feature.image_alt }}" class="{{ if eq $align_x "center" }}mx-auto{{ end }}{{ if eq $align_x "right" }} ml-auto{{ end }}" />
+			{{ end }}
+		</div>
+		{{ end }}
+		{{ if $has_text }}
+		<div class="feature__body my-2 cell-12{{ if and (and $is_horiz $has_media) (eq $media_width "thirty-three") }} cell-md-8{{ end }}{{ if and (and $is_horiz $has_media) (eq $media_width "fourty") }} cell-md-7{{ end }}{{ if and (and $is_horiz $has_media) (eq $media_width "fifty") }} cell-md-6{{ end }}{{ if and (and $is_horiz $has_media) (eq $media_width "sixty") }} cell-md-5{{ end }}{{ if and $has_media (eq $media_pos "right") }} order-md-first{{ end }}{{ if and $has_media (eq $media_pos "bottom") }} order-first{{ end }}{{ if eq $align_x "center" }} text-center{{ end }}{{ if eq $align_x "right" }} text-right{{ end }}">
+			{{ if $feature.title }}
+				{{ if $section.title }}
+				<h3 class="feature__title h2">{{ $feature.title }}</h3>
+				{{ else }}
+				<h2 class="feature__title h2">{{ $feature.title }}</h2>
+				{{ end }}
+			{{ end }}
+			{{ if $feature.subtitle }}
+			<p class="feature__subtitle">{{ $feature.subtitle }}</p>
+			{{ end }}
+			{{ if $feature.content }}
+			<div class="feature__copy">
+				{{ partial "markdownify-block" $feature.content }}
+			</div>
+			{{ end }}
+			{{ if $feature.actions }}
+			<div class="feature__actions btn-group{{ if eq $align_x "center" }} justify-center{{ end }}{{ if eq $align_x "right" }} justify-end{{ end }}">
+				{{ $include_dict := dict "actions" $feature.actions }}
+				{{ partial "section_actions.html" $include_dict }}
+			</div>
+			{{ end }}
+		</div>
+		{{ end }}
+	</div>
+</div>

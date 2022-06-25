@@ -1,0 +1,103 @@
+{{ $section := .section }}
+
+{{ $padding_top := $section.padding_top | default "medium" }}
+{{ $padding_bottom := $section.padding_bottom | default "medium" }}
+
+{{ $bg_color := $section.background_color | default "none" }}
+{{ $bg_img_opacity_pct := $section.background_image_opacity | default 100 }}
+{{ $bg_img_opacity := mul $bg_img_opacity_pct 0.01 }}
+{{ $bg_img_size := $section.background_image_size | default "cover" }}
+{{ $bg_img_position := $section.background_image_position | default "center center" }}
+{{ $bg_img_repeat := $section.background_image_repeat | default "no-repeat" }}
+
+{{ $align_y := $section.align_vert | default "top" }}
+{{ $title_align_x := $section.title_align | default "left" }}
+{{ $content_align_x := $section.content_align | default "left" }}
+
+{{ $has_text := false }}
+{{ if $section.content }}
+	{{ $has_text = true }}
+{{ end }}
+
+{{ $form_layout := $section.form_layout | default "stacked" }}
+{{ $form_width := $section.form_width | default "fifty" }}
+{{ $form_pos := $section.form_position | default "bottom" }}
+{{ if eq $has_text false }}
+	{{ $form_pos = "bottom" }}
+{{ end }}
+
+{{ $form_is_card := false }}
+{{ if $section.enable_card }}
+	{{ $form_is_card = true }}
+{{ end }}
+
+{{ $is_horiz := false }}
+{{ if or (eq $form_pos "left") (eq $form_pos "right") }}
+	{{ $is_horiz = true }}
+{{ end }}
+
+{{ $is_vert := false }}
+{{ if or (eq $form_pos "top") (eq $form_pos "bottom") }}
+	{{ $is_vert = true }}
+{{ end }}
+
+{{ $form_field_count := 0 }}
+{{ if $section.form_fields }}
+	{{ $form_field_count = $section.form_fields | len }}
+{{ end }}
+
+{{ $form_is_inline := false }}
+{{ if and (lt $form_field_count 2) (eq $form_layout "inline") }}
+	{{ $form_is_inline = true }}
+{{ end }}
+
+<section class="section{{ if $section.has_border }} has-border{{ end }}{{ if $section.background_image }} has-cover{{ end }}{{ if eq $bg_color "none" }} bg-none{{ end }}{{ if eq $bg_color "primary" }} bg-primary{{ end }}{{ if eq $bg_color "secondary" }} bg-secondary{{ end }}{{ if eq $padding_top "small" }} pt-4{{ end }}{{ if or (eq $padding_top "medium") (eq $padding_top "large") }} pt-6{{ end }}{{ if eq $padding_top "large" }} pt-md-7{{ end }}{{ if eq $padding_bottom "small" }} pb-4{{ end }}{{ if or (eq $padding_bottom "medium") (eq $padding_bottom "large") }} pb-6{{ end }}{{ if eq $padding_bottom "large" }} pb-md-7{{ end }}">
+
+	{{ if $section.background_image }}
+	<div class="cover-img" style="background-image: url('{{ $section.background_image | relURL }}'); opacity: {{ $bg_img_opacity }}; background-size: {{ $bg_img_size }}; background-repeat: {{ $bg_img_repeat }}; background-position: {{ $bg_img_position }}"></div>
+	{{ end }}
+
+	{{ if or $section.title $section.subtitle }}
+	<div class="container container--medium mb-3{{ if eq $title_align_x "center" }} text-center{{ end }}{{ if eq $title_align_x "right" }} text-right{{ end }}">
+		{{ if $section.subtitle }}
+		<div class="section__subtitle">{{ $section.subtitle }}</div>
+		{{ end }}
+		{{ if $section.title }}
+		<h2 class="section__title mt-0">{{ $section.title }}</h2>
+		{{ end }}
+	</div>
+	{{ end }}
+
+	<div class="container{{ if $is_vert }} container--medium{{ end }}">
+		<div class="section__content grid{{ if and $is_horiz (eq $align_y "middle") }} items-center{{ end }}{{ if and $is_horiz (eq $align_y "bottom") }} items-end{{ end }}">
+			{{ if $has_text }}
+			<div class="section__copy my-2 cell-12{{ if and $is_horiz (eq $form_width "fourty") }} cell-md-7{{ end }}{{ if and $is_horiz (eq $form_width "fifty") }} cell-md-6{{ end }}{{ if and $is_horiz (eq $form_width "sixty") }} cell-md-5{{ end }}{{ if eq $content_align_x "center" }} text-center{{ end }}{{ if eq $content_align_x "right" }} text-right{{ end }}">
+				{{ partial "markdownify-block" $section.content }}
+			</div>
+			{{ end }}
+			<div class="section__form my-2 cell-12{{ if and (and $is_horiz $has_text) (eq $form_width "fourty") }} cell-md-5{{ end }}{{ if and (and $is_horiz $has_text) (eq $form_width "fifty") }} cell-md-6{{ end }}{{ if and (and $is_horiz $has_text) (eq $form_width "sixty") }} cell-md-7{{ end }}{{ if or (eq $form_pos "top") (eq $form_pos "left") }} order-first{{ end }}">
+				<form name="{{ $section.form_id }}" id="{{ $section.form_id }}"{{ if $section.form_action }} action="{{ $section.form_action }}"{{ end }} method="POST" data-netlify="true" data-netlify-honeypot="{{ $section.form_id }}-bot-field" class="{{ if $form_is_inline }}form-inline{{ end }}{{ if $form_is_card }} card{{ end }}{{ if $form_is_card }} p-4{{ end }}{{ if $form_is_card }} p-sm-5{{ end }}">
+					<div class="sr-only">
+						<label id="{{ $section.form_id }}-honeypot-label" for="{{ $section.form_id }}-honeypot">Don't fill this out if you're human:</label>
+						<input aria-labelledby="{{ $section.form_id }}-honeypot-label" id="{{ $section.form_id }}-honeypot" name="{{ $section.form_id }}-bot-field" />
+					</div>
+					<input aria-labelledby="{{ $section.form_id }}-honeypot-label" type="hidden" name="form-name" value="{{ $section.form_id }}" />
+					<div class="form-content{{ if $form_is_inline }} flex{{ end }}{{ if $form_is_inline }} flex-column{{ end }}{{ if $form_is_inline }} flex-xs-row{{ end }}">
+						{{ if $section.form_fields }}
+							{{ range $field := $section.form_fields }}
+							<div class="form-group{{ if eq $form_is_inline false }} mb-2{{ end }}{{ if eq $form_is_inline true }} mb-1{{ end }}{{ if eq $form_is_inline true }} mb-xs-0{{ end }}{{ if $form_is_inline }} flex-auto{{ end }}">
+								{{ $include_dict := dict "field" $field }}
+								{{ partial "form_field.html" $include_dict }}
+							</div>
+							{{ end }}
+						{{ end }}
+
+						<div class="form-submit{{ if eq $form_is_inline false }} mt-3{{ end }}{{ if eq $form_is_inline true }} mx-auto{{ end }}{{ if eq $form_is_inline true }} mr-xs-0{{ end }}{{ if eq $form_is_inline true }} ml-xs-1{{ end }}">
+							<button type="submit" class="btn btn--primary">{{ $section.submit_label }}</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

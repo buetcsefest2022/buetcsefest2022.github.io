@@ -1,0 +1,5 @@
+{{ $actions := .actions }}
+{{ range $action := $actions }}
+	{{ $include_dict := dict "action" $action }}
+	{{ partial "action.html" $include_dict }}
+{{ end }}

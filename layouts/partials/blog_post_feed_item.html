@@ -1,0 +1,70 @@
+{{ $post := .post_page }}
+{{ $blog_feed_section := .blog_feed_section }}
+{{ $columns := $blog_feed_section.blog_feed_cols | default "three" }}
+
+{{ $is_card := false }}
+{{ if $blog_feed_section.enable_cards }}
+	{{ $is_card = true }}
+{{ end }}
+
+{{ $has_image := false }}
+{{ if $post.Params.thumb_image }}
+	{{ $has_image = true }}
+{{ end }}
+
+{{ $show_image := false }}
+{{ if $blog_feed_section.show_image }}
+	{{ $show_image = true }}
+{{ end }}
+
+{{ $no_image := false }}
+{{ if or (eq $has_image false) (eq $show_image false) }}
+	{{ $no_image = true }}
+{{ end }}
+
+{{ $show_categories := false }}
+{{ if and $blog_feed_section.show_categories $post.Params.categories }}
+	{{ $show_categories = true }}
+{{ end }}
+
+<article class="cell-12 cell-md-6 my-2{{ if eq $columns "three" }} cell-lg-4{{ end }}">
+	<div class="item{{ if $is_card }} card{{ end }}{{ if $is_card }} card--highlight{{ end }}{{ if $is_card }} card--vert{{ end }}">
+		<div class="flex flex-column">
+			{{ if and $has_image $show_image }}
+			<div class="item__media mb-3{{ if $is_card }} card__media{{ end }}{{ if $is_card }} card__media--fill{{ end }}{{ if $is_card }} card__media--top{{ end }}">
+				<a href="{{ $post.URL }}"><img src="{{ $post.Params.thumb_image | relURL }}" alt="{{ $post.Params.thumb_image_alt }}" /></a>
+			</div>
+			{{ end }}
+			<div class="item__body{{ if $is_card }} px-3{{ end }}{{ if $is_card }} pb-3{{ end }}{{ if and $is_card $no_image }} pt-3{{ end }}{{ if $is_card }} px-sm-4{{ end }}{{ if $is_card }} pb-sm-4{{ end }}{{ if and $is_card $no_image }} pt-4{{ end }}">
+				{{ if or $blog_feed_section.show_date $show_categories }}
+				<div class="item__meta mb-1">
+					{{ if $show_categories }}
+						{{ $include_dict := dict "categories" $post.Params.categories "container_class" "item__cat" }}
+						{{ partial "blog_post_categories.html" $include_dict }}
+						{{ if $blog_feed_section.show_date }}
+							<span class="item__meta-sep"> &middot; </span>
+						{{ end }}
+					{{ end }}
+					{{ if $blog_feed_section.show_date }}
+						<span class="item__date"><time datetime="{{ $post.Date | dateFormat "2006-01-02 15:04" }}">{{ $post.Date | dateFormat "January 02, 2006" }}</time></span>
+					{{ end }}
+				</div>
+				{{ end }}
+				{{ if $blog_feed_section.title }}
+					<h3 class="item__title mt-0{{ if eq $columns "two" }} h3{{ end }}{{ if eq $columns "three" }} h4{{ end }}"><a href="{{ $post.URL }}">{{ $post.Params.title }}</a></h3>
+				{{ else }}
+					<h2 class="item__title mt-0{{ if eq $columns "two" }} h3{{ end }}{{ if eq $columns "three" }} h4{{ end }}"><a href="{{ $post.URL }}">{{ $post.Params.title }}</a></h2>
+				{{ end }}
+				{{ if and $blog_feed_section.show_excerpt $post.Params.excerpt }}
+				<div class="item__copy">
+					<p>{{ $post.Params.excerpt }}</p>
+				</div>
+				{{ end }}
+				{{ if and $blog_feed_section.show_author $post.Params.author }}
+					{{ $include_dict := dict "author" $post.Params.author "container_class" "item__byline" "avatar_size" "small" }}
+					{{ partial "blog_post_author.html" $include_dict }}
+				{{ end }}
+			</div>
+		</div>
+	</div>
+</article>

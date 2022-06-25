@@ -1,0 +1,40 @@
+{
+    "title": "BUET CSE Fest 2022",
+    "layout_type": "full-width",
+    "style": "classic",
+    "palette": "green",
+    "mode": "light",
+    "base_font": "sans-serif",
+    "header": {
+        "title": "Event",
+        "logo": "images/logo.svg",
+        "logo_alt": "Fest Logo",
+        "has_primary_nav": false,
+        "has_secondary_nav": true,
+        "secondary_nav_links": [
+            {
+                "label": "About",
+                "url": "/about",
+                "style": "link"
+            },
+            {
+                "label": "Event",
+                "url": "/events",
+                "style": "link"
+            },
+            {
+                "label": "Tickets",
+                "url": "/thank-you",
+                "style": "primary"
+            }
+        ],
+        "has_anncmnt": false
+    },
+    "footer": {
+        "has_primary_nav": false,
+        "has_secondary_nav": false,
+        "has_tertiary_nav": false,
+        "has_social": false,
+        "content": "&copy; Stackbit. All rights reserved. This Jamstack site was created with <a href=\"https://www.stackbit.com/?utm_source=deployed-footer\" target=\"_blank\" rel=\"noopener\">Stackbit</a>. Create yours <a href=\"https://app.stackbit.com/create?theme=event&utm_source=deployed-footer\" target=\"_blank\" rel=\"noopener\">now</a>"
+    }
+}

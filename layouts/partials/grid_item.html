@@ -1,0 +1,101 @@
+{{ $section := .section }}
+{{ $item := .item }}
+
+{{ $columns := $section.grid_cols | default "three" }}
+{{ $gap_y := $section.grid_gap_vert | default "medium" }}
+{{ $is_card := false }}
+{{ if $section.enable_cards }}
+	{{ $is_card = true }}
+{{ end }}
+
+{{ $has_text := false }}
+{{ if or (or (or $item.title $item.subtitle) $item.content) $item.actions }}
+	{{ $has_text = true }}
+{{ end }}
+{{ $title_align_x := $item.title_align | default "left" }}
+{{ $content_align_x := $item.content_align | default "left" }}
+{{ $actions_align_x := $item.actions_align | default "left" }}
+{{ $actions_width := $item.actions_width | default "auto" }}
+
+{{ $has_image := false }}
+{{ if $item.image }}
+	{{ $has_image = true }}
+{{ end }}
+{{ $image_align_x := $item.image_align | default "left" }}
+{{ $image_width := $item.image_width | default "fifty" }}
+{{ $image_pos := $item.image_position | default "top" }}
+{{ if or (eq $has_image false) (eq $has_text false) }}
+	{{ $image_pos = "top" }}
+{{ end }}
+{{ $image_has_padding := false }}
+{{ if $item.image_has_padding }}
+	{{ $image_has_padding = true }}
+{{ end }}
+
+{{ $is_horiz := false }}
+{{ if or (eq $image_pos "left") (eq $image_pos "right") }}
+	{{ $is_horiz = true }}
+{{ end }}
+
+{{ $is_vert := false }}
+{{ if or (eq $image_pos "top") (eq $image_pos "bottom") }}
+	{{ $is_vert = true }}
+{{ end }}
+
+{{ $is_card_has_padding := false }}
+{{ if and $is_card $image_has_padding }}
+	{{ $is_card_has_padding = true }}
+{{ end }}
+
+{{ $is_card_no_padding := false }}
+{{ if and $is_card (eq $image_has_padding false) }}
+	{{ $is_card_no_padding = true }}
+{{ end }}
+
+{{ $is_card_no_img_no_padding := false }}
+{{ if and (and $is_card (eq $has_image false)) (eq $image_has_padding false) }}
+	{{ $is_card_no_img_no_padding = true }}
+{{ end }}
+
+<div class="cell-12 cell-md-6{{ if or (eq $columns "three") (eq $columns "four") }} cell-lg-4{{ end }}{{ if eq $columns "four" }} cell-xl-3{{ end }}{{ if eq $gap_y "small" }} my-1{{ end }}{{ if ne $gap_y "small" }} my-2{{ end }}{{ if eq $gap_y "large" }} my-sm-3{{ end }}">
+	<div class="item{{ if $is_card }} card{{ end }}{{ if $is_card }} card--highlight{{ end }}{{ if and $is_card $is_horiz }} card--horiz{{ end }}{{ if and $is_card $is_vert }} card--vert{{ end }}{{ if or $is_card_has_padding $is_card_no_img_no_padding }} p-3{{ end }}{{ if or $is_card_has_padding $is_card_no_img_no_padding }} p-sm-4{{ end }}">
+		<div class="{{ if $is_horiz }}grid{{ end }}{{ if $is_horiz }} grid-gap-none{{ end }}{{ if $is_vert }} flex{{ end }}{{ if $is_vert }} flex-column{{ end }}">
+			{{ if $has_image }}
+			<div class="{{ if $is_horiz }}cell-12{{ end }}{{ if and $is_horiz (eq $image_width "twenty-five") }} cell-md-3{{ end }}{{ if and $is_horiz (eq $image_width "thirty-three") }} cell-md-4{{ end }}{{ if and $is_horiz (eq $image_width "fourty") }} cell-md-5{{ end }}{{ if and $is_horiz (eq $image_width "fifty") }} cell-md-6{{ end }}{{ if and $is_horiz (eq $image_width "sixty") }} cell-md-7{{ end }}">
+				<div class="item__media{{ if $is_card }} card__media{{ end }}{{ if $is_card_no_padding }} card__media--fill{{ end }}{{ if and $is_card (eq $image_pos "top") }} card__media--top{{ end }}{{ if and $is_card (eq $image_pos "bottom") }} card__media--bottom{{ end }}{{ if and $is_card (eq $image_pos "left") }} card__media--left{{ end }}{{ if and $is_card (eq $image_pos "right") }} card__media--right{{ end }}{{ if and (and (ne $image_pos "bottom") $has_text) (eq $is_card_no_padding false) }} mb-3{{ end }}{{ if and (and $is_horiz $has_text) (eq $is_card_no_padding false) }} mb-md-0{{ end }}{{ if and (and (eq $image_pos "right") $has_text) (eq $is_card_no_padding false) }} ml-md-3{{ end }}{{ if and (and (eq $image_pos "left") $has_text) (eq $is_card_no_padding false) }} mr-md-3{{ end }}{{ if and (and (eq $image_pos "bottom") $has_text) (eq $is_card_no_padding false) }} mt-3{{ end }}">
+					<img src="{{ $item.image | relURL }}" alt="{{ $item.image_alt }}" class="{{ if eq $image_align_x "center" }} mx-auto{{ end }}{{ if eq $image_align_x "right" }} ml-auto{{ end }}" />
+				</div>
+			</div>
+			{{ end }}
+			{{ if $has_text }}
+			<div class="{{ if $is_horiz }}cell-12{{ end }}{{ if and $is_horiz (eq $image_width "twenty-five") }} cell-md-9{{ end }}{{ if and $is_horiz (eq $image_width "thirty-three") }} cell-md-8{{ end }}{{ if and $is_horiz (eq $image_width "fourty") }} cell-md-7{{ end }}{{ if and $is_horiz (eq $image_width "fifty") }} cell-md-6{{ end }}{{ if and $is_horiz (eq $image_width "sixty") }} cell-md-5{{ end }}{{ if and $has_image (eq $image_pos "right") }} order-md-first{{ end }}{{ if and $has_image (eq $image_pos "bottom") }} order-first{{ end }}{{ if and (and $is_card (eq $image_pos "bottom")) (eq $image_has_padding false) }} mb-auto{{ end }}">
+				<div class="item__body{{ if and $has_image $is_card_no_padding }} p-3{{ end }}{{ if and $has_image $is_card_no_padding }} px-sm-4{{ end }}{{ if and (and $has_image $is_card_no_padding) (ne $image_pos "bottom") }} pb-sm-4{{ end }}{{ if and (and $has_image $is_card_no_padding) (eq $image_pos "bottom") }} pt-sm-4{{ end }}{{ if and (and $has_image $is_card_no_padding) $is_horiz }} py-md-4{{ end }}{{ if and (and $has_image $is_card_no_padding) (eq $image_pos "left") }} pr-md-4{{ end }}{{ if and (and $has_image $is_card_no_padding) (eq $image_pos "left") }} pl-md-3{{ end }}{{ if and (and $has_image $is_card_no_padding) (eq $image_pos "right") }} pl-md-4{{ end }}{{ if and (and $has_image $is_card_no_padding) (eq $image_pos "right") }} pr-md-3{{ end }}">
+					{{ if $item.title }}
+						{{ if $section.title }}
+						<h3 class="item__title{{ if eq $columns "two" }} h3{{ end }}{{ if eq $columns "three" }} h4{{ end }}{{ if eq $columns "four" }} h5{{ end }}{{ if eq $title_align_x "center" }} text-center{{ end }}{{ if eq $title_align_x "right" }} text-right{{ end }}">{{ $item.title }}</h3>
+						{{ else }}
+						<h2 class="item__title{{ if eq $columns "two" }} h3{{ end }}{{ if eq $columns "three" }} h4{{ end }}{{ if eq $columns "four" }} h5{{ end }}{{ if eq $title_align_x "center" }} text-center{{ end }}{{ if eq $title_align_x "right" }} text-right{{ end }}">{{ $item.title }}</h2>
+						{{ end }}
+					{{ end }}
+					{{ if $item.subtitle }}
+					<p class="item__subtitle{{ if eq $title_align_x "center" }} text-center{{ end }}{{ if eq $title_align_x "right" }} text-right{{ end }}">
+						{{ $item.subtitle }}
+					</p>
+					{{ end }}
+					{{ if $item.content }}
+					<div class="item__copy{{ if eq $content_align_x "center" }} text-center{{ end }}{{ if eq $content_align_x "right" }} text-right{{ end }}">
+						{{ partial "markdownify-block" $item.content }}
+					</div>
+					{{ end }}
+					{{ if $item.actions }}
+					<div class="item__actions btn-group{{ if eq $actions_width "full-width" }} btn-group--fill{{ end }}{{ if eq $actions_align_x "center" }} justify-center{{ end }}{{ if eq $actions_align_x "right" }} justify-end{{ end }}">
+						{{ $include_dict := dict "actions" $item.actions }}
+						{{ partial "section_actions.html" $include_dict }}
+					</div>
+					{{ end }}
+				</div>
+			</div>
+			{{ end }}
+		</div>
+	</div>
+</div>

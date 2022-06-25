@@ -1,0 +1,69 @@
+{{ $section := .section }}
+
+{{ $padding_top := $section.padding_top | default "medium" }}
+{{ $padding_bottom := $section.padding_bottom | default "medium" }}
+{{ $align_x := $section.align | default "center" }}
+
+{{ $bg_color := $section.background_color | default "none" }}
+{{ $bg_img_opacity_pct := $section.background_image_opacity | default 100 }}
+{{ $bg_img_opacity := mul $bg_img_opacity_pct 0.01 }}
+{{ $bg_img_size := $section.background_image_size | default "cover" }}
+{{ $bg_img_position := $section.background_image_position | default "center center" }}
+{{ $bg_img_repeat := $section.background_image_repeat | default "no-repeat" }}
+
+{{ $has_text := false }}
+{{ if or $section.title $section.content }}
+	{{ $has_text = true }}
+{{ end }}
+
+{{ $has_actions := false }}
+{{ if $section.actions }}
+	{{ $has_actions = true }}
+{{ end }}
+{{ $actions_width := $section.actions_width | default "fifty" }}
+{{ $actions_pos := $section.actions_position | default "bottom" }}
+{{ if or (eq $has_actions false) (eq $has_text false) }}
+	{{ $actions_pos = "bottom" }}
+{{ end }}
+
+{{ $is_horiz := false }}
+{{ if or (eq $actions_pos "left") (eq $actions_pos "right") }}
+	{{ $is_horiz = true }}
+{{ end }}
+
+{{ $is_vert := false }}
+{{ if or (eq $actions_pos "top") (eq $actions_pos "bottom") }}
+	{{ $is_vert = true }}
+{{ end }}
+
+<section class="section cta{{ if $section.has_border }} has-border{{ end }}{{ if $section.background_image }} has-cover{{ end }}{{ if eq $bg_color "none" }} bg-none{{ end }}{{ if eq $bg_color "primary" }} bg-primary{{ end }}{{ if eq $bg_color "secondary" }} bg-secondary{{ end }}{{ if eq $padding_top "small" }} pt-4{{ end }}{{ if or (eq $padding_top "medium") (eq $padding_top "large") }} pt-6{{ end }}{{ if eq $padding_top "large" }} pt-md-7{{ end }}{{ if eq $padding_bottom "small" }} pb-4{{ end }}{{ if or (eq $padding_bottom "medium") (eq $padding_bottom "large") }} pb-6{{ end }}{{ if eq $padding_bottom "large" }} pb-md-7{{ end }}">
+
+	{{ if $section.background_image }}
+	<div class="cover-img" style="background-image: url('{{ $section.background_image | relURL }}'); opacity: {{ $bg_img_opacity }}; background-size: {{ $bg_img_size }}; background-repeat: {{ $bg_img_repeat }}; background-position: {{ $bg_img_position }}"></div>
+	{{ end }}
+
+	<div class="container{{ if $is_vert }} container--medium{{ end }}">
+		<div class="cta__content grid items-center">
+			{{ if $has_text }}
+			<div class="cta__body my-1 cell-12{{ if and (and $is_horiz $has_actions) (eq $actions_width "fourty") }} cell-md-7{{ end }}{{ if and (and $is_horiz $has_actions) (eq $actions_width "fifty") }} cell-md-6{{ end }}{{ if and (and $is_horiz $has_actions) (eq $actions_width "sixty") }} cell-md-5{{ end }}{{ if eq $align_x "center" }} text-center{{ end }}{{ if eq $align_x "right" }} text-right{{ end }}">
+				{{ if $section.title }}
+				<h1 class="cta__title">{{ $section.title }}</h1>
+				{{ end }}
+				{{ if $section.content }}
+				<div class="cta__copy">
+					{{ partial "markdownify-block" $section.content }}
+				</div>
+				{{ end }}
+			</div>
+			{{ end }}
+			{{ if $has_actions }}
+			<div class="cta__actions my-1 cell-12{{ if and (and $is_horiz $has_text) (eq $actions_width "fourty") }} cell-md-5{{ end }}{{ if and (and $is_horiz $has_text) (eq $actions_width "fifty") }} cell-md-6{{ end }}{{ if and (and $is_horiz $has_text) (eq $actions_width "sixty") }} cell-md-7{{ end }}{{ if and $has_actions (eq $actions_pos "left") }} order-md-first{{ end }}{{ if and $has_actions (eq $actions_pos "top") }} order-first{{ end }}">
+				<div class="cta__actions btn-group{{ if $is_horiz }} justify-md-center{{ end }}{{ if eq $align_x "center" }} justify-center{{ end }}{{ if eq $align_x "right" }} justify-end{{ end }}">
+					{{ $include_dict := dict "actions" $section.actions }}
+					{{ partial "section_actions.html" $include_dict }}
+				</div>
+			</div>
+			{{ end }}
+		</div>
+	</div>
+</section>

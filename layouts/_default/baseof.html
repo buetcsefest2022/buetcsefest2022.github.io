@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>    
+
+        <title>{{ if .Params.seo.title }}{{ $.Params.seo.title }}{{ else }}{{ print print $.Title " | " $.Site.Data.config.title }}{{ end }}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="google" content="notranslate" />
+        <meta name="description" content="{{ .Params.seo.description | default "" }}" />
+        {{ if .Params.seo.robots }}
+        <meta name="robots" content="{{ delimit $.Params.seo.robots "," }}">
+        {{ end }}
+        {{ range $meta := .Params.seo.extra }}
+          {{ $key_name := $meta.keyName | default "name" }}
+          {{ if $meta.relativeUrl }}
+            {{ if $.Site.Data.config.domain }}
+              {{ $domain := trim $.Site.Data.config.domain "/" }}
+              {{ $rel_url := $meta.value | relURL }}
+              {{ $full_url := print $domain $rel_url }}
+              <meta {{ $key_name }}="{{ $meta.name }}" content="{{ $full_url }}">
+            {{ end }}
+          {{ else }}
+            <meta {{ $key_name }}="{{ $meta.name }}" content="{{ $meta.value }}">
+          {{ end }}
+        {{ end }}
+        {{ $style := .Site.Data.config.style | default "classic" }}
+        {{ $font := .Site.Data.config.base_font | default "sans-serif" }}
+        {{ if eq $style "bold" }}
+          {{ if eq $font "serif" }}
+          <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+          {{ else }}
+          <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+          {{ end }}
+        {{ else if eq $style "classic" }}
+          {{ if eq $font "serif" }}
+          <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+          {{ else }}
+          <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+          {{ end }}
+        {{ else }}
+          {{ if eq $font "serif" }}
+          <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+          {{ else }}
+          <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+          {{ end }}
+        {{ end }}
+        <link rel="stylesheet" href="{{ (resources.Get "sass/main.scss" | resources.ToCSS (dict "indentWidth" 4 "outputStyle" "expanded" "precision" 10 "targetPath" "css/main.css")).Permalink }}">
+        {{ if .Site.Data.config.favicon }}
+        <link rel="icon" href="{{ $.Site.Data.config.favicon | relURL }}">
+        {{ end }}
+        
+    </head>
+    <body class="layout-{{ .Site.Data.config.layout_type }} style-{{ .Site.Data.config.style }} palette-{{ .Site.Data.config.palette }} mode-{{ .Site.Data.config.mode }} font-{{ .Site.Data.config.base_font }}">
+        
+        <div id="site-wrap" class="site">
+        
+        	{{ if and .Site.Data.config.header.has_anncmnt .Site.Data.config.header.anncmnt_content }}
+        		{{ if $.Site.Data.config.header.anncmnt_is_home_only }}
+        			{{ if eq $.URL "/" }}
+        				{{ $include_dict := dict "Site" $.Site }}
+        				{{ partial "announcement.html" $include_dict }}
+        			{{ end }}
+        		{{ else }}
+        			{{ $include_dict := dict "Site" $.Site }}
+        			{{ partial "announcement.html" $include_dict }}
+        		{{ end }}
+        	{{ end }}
+        
+        	{{ partial "header.html" . }}
+        
+        	<main id="content" class="site-content">
+        		{{ block "content" . }}{{ end }}
+        	</main>
+        
+        	{{ partial "footer.html" . }}
+        
+        </div>
+        
+        {{ if or .Site.Data.config.header.has_primary_nav .Site.Data.config.header.has_secondary_nav }}
+        <div class="nav-overlay js-nav-toggle"></div>
+        {{ end }}
+        <script src="{{ "js/init.js" | relURL }}"></script>
+        <script src="{{ "js/page-load.js" | relURL }}"></script>
+    </body> 
+</html>

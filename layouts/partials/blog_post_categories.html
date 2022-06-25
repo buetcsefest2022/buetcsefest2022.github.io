@@ -1,0 +1,13 @@
+{{ $categories := .categories }}
+{{ $container_class := .container_class }}
+<span class="{{ $container_class }}">
+	{{ $category_len := len $categories }}
+	{{ range $category_idx, $category := $categories }}
+		{{ $category_data := getJSON $category }}
+		{{ if $category_data.link }}
+			<a href="{{ $category_data.link | relURL }}">{{ $category_data.title }}</a>{{ if not (eq $category_idx (sub $category_len 1)) }}, {{ end }}
+		{{ else }}
+			<span>{{ $category_data.title }}</span>{{ if not (eq $category_idx (sub $category_len 1)) }}, {{ end }}
+		{{ end }}
+	{{ end }}
+</span>

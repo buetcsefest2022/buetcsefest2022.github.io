@@ -1,0 +1,25 @@
+{{ $author := .author }}
+{{ $container_class := .container_class }}
+{{ $avatar_size := .avatar_size }}
+<div class="{{ $container_class }}">
+	{{ $author_data := getJSON $author }}
+	{{ if $author_data.link }}
+	<a class="flex items-center" href="{{ $author_data.link | relURL }}">
+		{{ if $author_data.photo }}
+		<figure class="avatar mr-1{{ if eq $avatar_size "small" }} avatar--small{{ end }}">
+			<img class="avatar__img" src="{{ $author_data.photo | relURL }}" alt="{{ $author_data.photo_alt }}" />
+		</figure>
+		{{ end }}
+		<span>{{ $author_data.first_name }} {{ $author_data.last_name }}</span>
+	</a>
+	{{ else }}
+	<div class="flex items-center">
+		{{ if $author_data.photo }}
+		<figure class="avatar mr-2{{ if eq $avatar_size "small" }} avatar--small{{ end }}">
+			<img class="avatar__img" src="{{ $author_data.photo | relURL }}" alt="{{ $author_data.photo_alt }}" />
+		</figure>
+		{{ end }}
+		<span>{{ $author_data.first_name }} {{ $author_data.last_name }}</span>
+	</div>
+	{{ end }}
+</div>

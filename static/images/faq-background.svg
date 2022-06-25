@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="108px" viewBox="0 0 100 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>patterns</title>
+    <g id="patterns" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(12.000000, 5.000000)">
+            <polyline id="Fill-78" fill="#C2CAD2" opacity="0.3" points="26 5 26 16.0372552 0 42 0 30.9627448 26 5"></polyline>
+            <polyline id="Fill-79" fill="#C2CAD2" opacity="0.3" points="49.11 3.2108 49.11 16.8612 17 48.9712 17 35.3208 49.11 3.2108"></polyline>
+            <polyline id="Fill-80" fill="#8696A6" opacity="0.25" points="33 4 33 15.0372552 7 41 7 29.9627448 33 4"></polyline>
+            <polyline id="Fill-81" fill="#8696A6" opacity="0.25" points="58.6756 0.4108 58.6756 14.0612 26.566 46.1712 26.566 32.5208 58.6756 0.4108"></polyline>
+        </g>
+        <g id="Group" transform="translate(15.000000, 47.000000)">
+            <polygon id="Fill-78" fill="#C2CAD2" opacity="0.3" points="30 18.1253846 0 49 0 35.8746154 30 5"></polygon>
+            <polyline id="Fill-79" fill="#C2CAD2" opacity="0.3" points="58 3 58 19.1082858 20 57 20 40.8917142 58 3"></polyline>
+            <polyline id="Fill-80" fill="#8696A6" opacity="0.251294513" points="39 4 39 17.1253846 9 48 9 34.8746154 39 4"></polyline>
+            <polyline id="Fill-81" fill="#8696A6" opacity="0.251294513" points="70 0 70 16.1082858 32 54 32 37.8917142 70 0"></polyline>
+        </g>
+    </g>
+</svg>

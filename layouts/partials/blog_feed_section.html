@@ -1,0 +1,78 @@
+{{ $section := .section }}
+
+{{ $align_x := $section.align | default "center" }}
+{{ $padding_top := $section.padding_top | default "medium" }}
+{{ $padding_bottom := $section.padding_bottom | default "medium" }}
+
+{{ $bg_color := $section.background_color | default "none" }}
+{{ $bg_img_opacity_pct := $section.background_image_opacity | default 100 }}
+{{ $bg_img_opacity := mul $bg_img_opacity_pct 0.01 }}
+{{ $bg_img_size := $section.background_image_size | default "cover" }}
+{{ $bg_img_position := $section.background_image_position | default "center center" }}
+{{ $bg_img_repeat := $section.background_image_repeat | default "no-repeat" }}
+
+<section class="section blog-feed{{ if $section.has_border }} has-border{{ end }}{{ if $section.background_image }} has-cover{{ end }}{{ if eq $bg_color "none" }} bg-none{{ end }}{{ if eq $bg_color "primary" }} bg-primary{{ end }}{{ if eq $bg_color "secondary" }} bg-secondary{{ end }}{{ if eq $padding_top "small" }} pt-4{{ end }}{{ if or (eq $padding_top "medium") (eq $padding_top "large") }} pt-6{{ end }}{{ if eq $padding_top "large" }} pt-md-7{{ end }}{{ if eq $padding_bottom "small" }} pb-4{{ end }}{{ if or (eq $padding_bottom "medium") (eq $padding_bottom "large") }} pb-6{{ end }}{{ if eq $padding_bottom "large" }} pb-md-7{{ end }}">
+
+	{{ if $section.background_image }}
+	<div class="cover-img" style="background-image: url('{{ $section.background_image | relURL }}'); opacity: {{ $bg_img_opacity }}; background-size: {{ $bg_img_size }}; background-repeat: {{ $bg_img_repeat }}; background-position: {{ $bg_img_position }}"></div>
+	{{ end }}
+
+	{{ if or $section.title $section.subtitle }}
+	<div class="container container--medium mb-5{{ if eq $align_x "center" }} text-center{{ end }}{{ if eq $align_x "right" }} text-right{{ end }}">
+		{{ if $section.subtitle }}
+		<div class="section__subtitle">{{ $section.subtitle }}</div>
+		{{ end }}
+		{{ if $section.title }}
+		<h2 class="section__title mt-0">{{ $section.title }}</h2>
+		{{ end }}
+	</div>
+	{{ end }}
+
+	<div class="container">
+		<div class="grid">
+			{{ $section_author := false }}
+			{{ if $section.author }}
+				{{ $section_author = getJSON $section.author }}
+			{{ end }}
+
+			{{ $section_category := false }}
+			{{ if $section.category }}
+				{{ $section_category = getJSON $section.category }}
+			{{ end }}
+
+			{{ $section_tag := false }}
+			{{ if $section.tag }}
+				{{ $section_tag = getJSON $section.tag }}
+			{{ end }}
+
+			{{ $posts_all := (.Site.GetPage "section" "/blog").Pages }}
+			{{ $posts_sorted := $posts_all.ByDate.Reverse }}
+
+			{{ $show_recent := $section.show_recent | default false }}
+			{{ $recent_count := $section.recent_count | default 0 }}
+			{{ $post_count := 0 }}
+
+			{{ range $post := $posts_sorted }}
+				{{ $is_post := false }}
+				{{ if eq $post.Params.layout "post" }}
+					{{ $is_post = true }}
+				{{ end }}
+				{{ if and $is_post (or (eq $show_recent false) (lt $post_count $recent_count)) }}
+				{{ $post_count = add $post_count 1 }}
+				{{ $include_dict := dict "blog_feed_section" $section "post_page" $post "section_author" $section_author "section_category" $section_category "section_tag" $section_tag }}
+				{{ partial "blog_feed_item_filter.html" $include_dict }}
+				{{ end }}
+			{{ end }}
+		</div>
+	</div>
+
+	{{ if $section.actions }}
+	<div class="container container--medium mt-4">
+		<div class="section__actions btn-group{{ if eq $align_x "center" }} justify-center{{ end }}{{ if eq $align_x "right" }} justify-end{{ end }}">
+			{{ $include_dict := dict "actions" $section.actions }}
+			{{ partial "section_actions.html" $include_dict }}
+		</div>
+	</div>
+	{{ end }}
+
+</section>

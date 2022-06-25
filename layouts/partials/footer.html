@@ -1,0 +1,92 @@
+{{ $has_logo := false }}
+{{ if .Site.Data.config.footer.logo }}
+	{{ $has_logo = true }}
+{{ end }}
+{{ $footer_content := false }}
+{{ if or .Site.Data.config.footer.content .Site.Data.config.footer.links }}
+	{{ $footer_content = true }}
+{{ end }}
+{{ $footer_social := false }}
+{{ if and .Site.Data.config.footer.has_social .Site.Data.config.footer.social_links }}
+	{{ $footer_social = true }}
+{{ end }}
+
+<footer class="site-footer">
+	{{ if or (or (or $has_logo .Site.Data.config.footer.has_primary_nav) .Site.Data.config.footer.has_secondary_nav) .Site.Data.config.footer.has_tertiary_nav }}
+	<div class="site-footer__nav py-5 py-md-6">
+		<div class="container">
+			<div class="grid{{ if eq $has_logo false }} justify-md-center{{ end }}">
+				{{ if $has_logo }}
+				<a class="site-footer__logo cell-12 cell-md-5 my-4" href="{{ "/" | relURL }}">
+					<img src="{{ $.Site.Data.config.footer.logo | relURL }}" alt="{{ $.Site.Data.config.header.logo_alt }}" />
+				</a>
+				{{ end }}
+				{{ if and $.Site.Data.config.footer.has_primary_nav $.Site.Data.config.footer.primary_nav_links }}
+				<div class="site-footer__menu cell-12 cell-md my-3 my-md-4">
+					{{ if $.Site.Data.config.footer.primary_nav_title }}
+					<h2 class="h4 mb-3 mb-md-4">{{ $.Site.Data.config.footer.primary_nav_title }}</h2>
+					{{ end }}
+					{{ $include_dict := dict "footer_menu" $.Site.Data.config.footer.primary_nav_links }}
+					{{ partial "footer_menu.html" $include_dict }}
+				</div>
+				{{ end }}
+				{{ if and $.Site.Data.config.footer.has_secondary_nav $.Site.Data.config.footer.secondary_nav_links }}
+				<div class="site-footer__menu cell-12 cell-md my-3 my-md-4">
+					{{ if $.Site.Data.config.footer.secondary_nav_title }}
+					<h2 class="h4 mb-3 mb-md-4">{{ $.Site.Data.config.footer.secondary_nav_title }}</h2>
+					{{ end }}
+					{{ $include_dict := dict "footer_menu" $.Site.Data.config.footer.secondary_nav_links }}
+					{{ partial "footer_menu.html" $include_dict }}
+				</div>
+				{{ end }}
+				{{ if and $.Site.Data.config.footer.has_tertiary_nav $.Site.Data.config.footer.tertiary_nav_links }}
+				<div class="site-footer__menu cell-12 cell-md my-3 my-md-4">
+					{{ if $.Site.Data.config.footer.tertiary_nav_title }}
+					<h2 class="h4 mb-3 mb-md-4">{{ $.Site.Data.config.footer.tertiary_nav_title }}</h2>
+					{{ end }}
+					{{ $include_dict := dict "footer_menu" $.Site.Data.config.footer.tertiary_nav_links }}
+					{{ partial "footer_menu.html" $include_dict }}
+				</div>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+	{{ end }}
+	{{ if or $footer_content $footer_social }}
+	<div class="site-footer__info py-3 py-sm-4">
+		<div class="container">
+			<div class="grid items-center">
+				{{ if $footer_content }}
+				<div class="site-footer__copyright cell-12{{ if $footer_social }} cell-sm{{ end }}">
+					{{ if $.Site.Data.config.footer.content }}
+						<span>{{ $.Site.Data.config.footer.content | safeHTML }}</span>
+					{{ end }}
+					{{ range $link := $.Site.Data.config.footer.links }}
+						<a href="{{ $link.url | relURL }}"
+							{{ if $link.new_window }} target="_blank"{{ end }}
+							{{ if or $link.new_window $link.no_follow }} rel="{{ if $link.new_window }}noopener {{ end }}{{ if $link.no_follow }}nofollow{{ end }}"{{ end }}>{{ $link.label }}</a>
+					{{ end }}
+				</div>
+				{{ end }}
+				{{ if $footer_social }}
+				<div class="site-footer__social cell-12{{ if $footer_content }} cell-sm-auto{{ end }}">
+					{{ range $link := $.Site.Data.config.footer.social_links }}
+						{{ $link_style := $link.style | default "link" }}
+						{{ if and $link.has_icon $link.icon }}
+						<a href="{{ $link.url | relURL }}"
+							{{ if $link.new_window }} target="_blank"{{ end }}
+							{{ if or $link.new_window $link.no_follow }} rel="{{ if $link.new_window }}noopener {{ end }}{{ if $link.no_follow }}nofollow{{ end }}"{{ end }}
+							class="btn btn--icon{{ if eq $link_style "primary" }} btn--primary{{ end }}{{ if eq $link_style "secondary" }} btn--secondary{{ end }}{{ if eq $link_style "link" }} btn--clear{{ end }}">
+							{{ $include_dict := dict "icon" $link.icon }}
+							{{ partial "icon.html" $include_dict }}
+							<span class="sr-only">{{ $link.label }}</span>
+						</a>
+						{{ end }}
+					{{ end }}
+				</div>
+				{{ end }}
+			</div>
+		</div>
+	</div>
+	{{ end }}
+</footer>

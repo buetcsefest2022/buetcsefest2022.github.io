@@ -1,0 +1,9 @@
+{{ define "content" }}
+
+{{ range $section := .Params.sections }}
+  {{ $include_dict := dict "section" $section "Site" $.Site }}
+  {{ $component := print $section.type ".html" }}
+  {{ partial $component $include_dict }}
+{{ end }}
+
+{{ end }}

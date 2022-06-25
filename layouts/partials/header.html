@@ -1,0 +1,42 @@
+<header class="site-header py-2">
+	<div class="container">
+		<nav class="navbar flex items-center" aria-label="Main Navigation">
+			<a class="sr-only" href="#content">Skip to main content</a>
+			<div class="navbar__branding mr-2">
+				{{ if .Site.Data.config.header.logo }}
+				<a class="navbar__logo m-0" href="{{ "/" | relURL }}"><img src="{{ $.Site.Data.config.header.logo | relURL }}" alt="{{ $.Site.Data.config.header.logo_alt }}" /></a>
+				{{ else }}
+				<a class="navbar__title h4 m-0" href='{{ "/" | relURL }}'>{{ $.Site.Data.config.header.title }}</a>
+				{{ end }}
+			</div>
+			{{ if or .Site.Data.config.header.has_primary_nav .Site.Data.config.header.has_secondary_nav }}
+			<div class="navbar__container flex-md-auto">
+				<div class="navbar__scroller">
+					<div class="navbar__inner">
+						<button aria-label="Close" class="btn btn--icon btn--clear navbar__close-btn js-nav-toggle">
+							{{ $include_dict := dict "icon" "close" }}
+							{{ partial "icon.html" $include_dict }}
+							<span class="sr-only">Close</span>
+						</button>
+						<div class="navbar__menu flex-md">
+							{{ if and $.Site.Data.config.header.has_primary_nav $.Site.Data.config.header.primary_nav_links }}
+								{{ $include_dict = dict "header_menu" $.Site.Data.config.header.primary_nav_links "page" $ }}
+								{{ partial "header_menu.html" $include_dict }}
+							{{ end }}
+							{{ if and $.Site.Data.config.header.has_secondary_nav $.Site.Data.config.header.secondary_nav_links }}
+								{{ $include_dict = dict "header_menu" $.Site.Data.config.header.secondary_nav_links "page" $ }}
+								{{ partial "header_menu.html" $include_dict }}
+							{{ end }}
+						</div>
+					</div>
+				</div>
+			</div>
+			<button aria-label="Menu" class="btn btn--icon btn--clear navbar__menu-btn js-nav-toggle ml-auto">
+				{{ $include_dict = dict "icon" "menu" }}
+				{{ partial "icon.html" $include_dict }}
+				<span class="sr-only">Menu</span>
+			</button>
+			{{ end }}
+		</nav>
+	</div>
+</header>
