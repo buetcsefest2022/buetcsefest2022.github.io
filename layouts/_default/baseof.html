@@ -49,6 +49,17 @@
         <link rel="icon" href="{{ $.Site.Data.config.favicon | relURL }}">
         {{ end }}
         
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJKD7N3E0N"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-LJKD7N3E0N');
+        </script>
+        <!-- Gtag End -->
+
     </head>
     <body class="layout-{{ .Site.Data.config.layout_type }} style-{{ .Site.Data.config.style }} palette-{{ .Site.Data.config.palette }} mode-{{ .Site.Data.config.mode }} font-{{ .Site.Data.config.base_font }}">
         
