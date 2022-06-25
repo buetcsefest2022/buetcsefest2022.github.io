@@ -1,115 +1,148 @@
 ---
-title: DLSprint 2022
+title: DL Sprint 2022
 sections:
+  - type: header_menu
+    
   - type: hero_section
     title: BUET CSE Fest - Deep Learning Sprint 2022
-    subtitle: Co-organized by Incepta Solutions Ltd.
-    content: July 1 - July 27, 2022
+    subtitle: Presented by Bengali.AI Community
+    content: July 1 - July 29, 2022
     actions:
-      - label: Register Today!
-        url: "#"
+      - label: Rules
+        url: "/dlsprint/rules"
+        style: secondary
+      - label: Register
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSflaPGAVZImwuDSFiwZ7rrIs7F0nzptntbYHcrHvrfSZ2I1KA/viewform"
         style: primary
     align: center
     padding_top: large
     padding_bottom: large
     background_color: primary
-    background_image: images/hero-background.jpg
-    background_image_opacity: 15
+    background_image: images/dlsprint/cover.jpg
+    background_image_opacity: 0
     background_image_size: cover
 
   - type: grid_section
-    title: Sponsors & Partners
-    subtitle: ""
-    align: center
     grid_items:
-      - image: images/stackbit.svg
-        image_alt: Stackbit logo
-        image_align: center
-      - image: images/netlify.svg
-        image_alt: Netlify logo
-        image_align: center
-      - image: images/github.svg
-        image_alt: GitHub logo
-        image_align: center
-      - image: images/sticker-mule.svg
-        image_alt: Sticker Mule logo
-        image_align: center
-    grid_cols: four
+      - title: "July 1 - July 29"
+        title_align: left
+        content: >-
+          A month long competition with both online and on-site rounds.
+        content_align: left
+        image: images/2-days.svg
+        image_alt: Section item 1 icon
+        image_position: left
+        image_width: twenty-five
+
+      - title: 2 Phases
+        title_align: left
+        content: "**Phase 1:** July 1 - July 25 <br>**Phase 2:** July 29"
+        content_align: left
+        image: images/2-tracks.svg
+        image_alt: Section item 2 icon
+        image_position: left
+        image_width: twenty-five
+
+      - title: "200K+ Prize Money"
+        title_align: left
+        content: "Participate and win from a total prize pool of **200K+ BDT**"
+        content_align: left
+        image: images/20-speakers.svg
+        image_alt: Section item 3 icon
+        image_position: left
+        image_width: twenty-five
+    grid_cols: three
+    grid_gap_horiz: medium
+    grid_gap_vert: medium
+    enable_cards: false
+    align: center
+    background_color: secondary
+
+
+  - type: grid_section
+    title: Event Overview
+    grid_items:
+
+      - title: ""
+        title_align: left
+        content: >-
+          Bengali is the fifth most spoken of all native languages all over the world. But so far very little work has been done on Bengali Speech Transcription. Considering the large audience and far reaching opportunities, there’s significant business and educational interest in developing AI that can be used in Bengali ASR (Automatic Speech Recognition).
+
+          <br><br>
+          We, at the Department of Computer Science and Engineering, BUET, in partnership with Bengali.AI, are glad to present the very first Bengali ASR competition of its kind, DL Sprint with a newly released dataset as part of BUET CSE Fest 2022. The event is co-sponsored by Incepta Solutions, co-hosted by EBLICT Project (ICT Division ) and IEEE Computer Society BUET Student Branch Chapter. In case you are not familiar with the problem, you will have human voice audio as the input and have to correctly predict the sentence that is present in the audio. We will be using a novel dataset collected and curated by Bengali.Ai for Bengali Speech to Text transcription. By participating in the competition, you will accelerate Bengali ASR research and help enable the progress of Bengali language in the AI space. We have also prepared workshop sessions  to get you off the mark for those of you who are beginners in this domain.
+
+          <br><br>
+          And on top of that, we have a prize pool of whooping 200k+ BDT  for the winners! The competition is also open for all. So, no matter if you are a student or a professional, you have a shot at this. We also have very special prizes for BUET teams. Keep an eye on the event to know more!
+
+          <br><br>
+          So what are you waiting for? Let the sprint begin!
+        content_align: left
+      
+      - title: "Schedule"
+        title_align: left
+        content: >-
+          <table>
+            <tr>
+              <th>#</th>  <th>Location</th>                 <th>Date & Time</th>  
+            </tr>
+            <tr>
+              <td>Phase 1</td>  <td>Kaggle</td>             <td>July 1 - July 25, 2022</td>
+            </tr>
+            <tr>
+              <td>Phase 2</td>  <td>Dept of CSE, BUET</td>  <td>July 29, 2022</td>
+            </tr>
+            <tr>
+              <td>Prize Giving</td>  <td>Dept of CSE, BUET</td>  <td>*August 6, 2022</td>
+            </tr>
+          </table>
+        content_align: left
+    grid_cols: two
     grid_gap_horiz: medium
     grid_gap_vert: medium
     padding_top: large
     padding_bottom: large
     background_color: none
 
-  - type: features_section
-    title: Rules & Regulations
-    features:
-      - content: >-
-          **For competition rules and regulations for BUET CSE Fest DLSprint 2022, [visit this page.](/dlsprint/rules)**
-        align: center
-    feature_padding_vert: medium
-    align: center
-    padding_top: medium
-    padding_bottom: medium
-    background_color: secondary
-
-
   - type: grid_section
-    title: Organizers
-    subtitle: Fantastic lineup of experts!
-    grid_items:
-      - title: Eric Widget
-        subtitle: 'React Awesome, USA'
-        image: images/avatar_1.jpg
-        image_alt: Speaker 1 photo
-        image_position: top
-
-      - title: Parsley Montana
-        subtitle: 'The Studio, Distributed, Estonia'
-        image: images/avatar_2.jpg
-        image_alt: Speaker 2 photo
-        image_position: top
-
-      - title: Indigo Violet
-        subtitle: 'Microsoft, USA'
-        image: images/avatar_3.jpg
-        image_alt: Speaker 3 photo
-        image_position: top
-
-      - title: Penny Tool
-        subtitle: 'Libris, USA'
-        image: images/avatar_4.jpg
-        image_alt: Speaker 4 photo
-        image_position: top
-
-      - title: Shequondolisa Bivouac
-        subtitle: 'Exto, Canada'
-        image: images/avatar_5.jpg
-        image_alt: Speaker 5 photo
-        image_position: top
-
-      - title: Linguina Nettlewater
-        subtitle: 'CSS Rocks, Sweden'
-        image: images/avatar_6.jpg
-        image_alt: Speaker 6 photo
-        image_position: top
-
-      - title: Hugh Millie-Yate
-        subtitle: 'Random CMS, Sweden'
-        image: images/avatar_7.jpg
-        image_alt: Speaker 7 photo
-        image_position: top
-        
-      - title: Theodore Handle
-        subtitle: 'ReactEvent, Israel'
-        image: images/avatar_8.jpg
-        image_alt: Speaker 8 photo
-        image_position: top
-    grid_cols: four
-    grid_gap_horiz: medium
-    grid_gap_vert: large
+    title: Sponsors & Partners
+    subtitle: ""
     align: center
-    background_color: none
+    grid_items:
+      - image: images/dlsprint/logo/ebl-ict.png
+        image_alt: EBL ICT logo
+        image_align: center
+        title: "EBL, ICT Divison BD"
+        subtitle: "Co-host"
+        title_align: center
+
+      - image: images/dlsprint/logo/bengal-ai-dark.png
+        image_alt: Bengali AI Community logo
+        image_align: center
+        title: "Bengali.AI Community"
+        subtitle: "Presenter"
+        title_align: center
+
+      - image: images/dlsprint/logo/incepta.png
+        image_alt: Incepta Solutions logo
+        image_align: center
+        title: "Incepta Solutions Limited"
+        subtitle: "Co-sponsor"
+        title_align: center
+
+      - image: images/dlsprint/logo/ieee-cs.png
+        image_alt: BUET IEEE CS logo
+        image_align: center
+        title: "BUET IEEE CS"
+        subtitle: "Co-host"
+        title_align: center
+
+
+    grid_cols: four
+    grid_gap_horiz: large
+    grid_gap_vert: large
+    padding_top: large
+    padding_bottom: large
+    background_color: secondary
 
 
   - type: grid_section
@@ -166,12 +199,23 @@ sections:
     align: center
     padding_top: large
     padding_bottom: large
-    background_color: secondary
-    background_image: images/faq-background.svg
-    background_image_repeat: repeat
-    background_image_size: auto
-    background_image_opacity: 15
+    background_color: none
 
+  - type: cta_section
+    title: What are you waiting for?
+    actions:
+      - label: Register
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSflaPGAVZImwuDSFiwZ7rrIs7F0nzptntbYHcrHvrfSZ2I1KA/viewform"
+        style: secondary
+        has_icon: true
+        icon: arrow-right
+        icon_position: right
+    actions_position: right
+    actions_width: fourty
+    align: left
+    padding_top: large
+    padding_bottom: large
+    background_color: secondary
   
   - type: grid_section
     grid_items:
@@ -197,31 +241,31 @@ sections:
     padding_top: medium
     padding_bottom: medium
     background_color: none
-seo:
-  title: Stackbit Event Theme
-  description: The preview of the Event theme
-  extra:
-    - name: 'og:type'
-      value: website
-      keyName: property
-    - name: 'og:title'
-      value: Stackbit Event Theme
-      keyName: property
-    - name: 'og:description'
-      value: The preview of the Event theme
-      keyName: property
-    - name: 'og:image'
-      value: images/feature-3.jpg
-      keyName: property
-      relativeUrl: true
-    - name: 'twitter:card'
-      value: summary_large_image
-    - name: 'twitter:title'
-      value: Stackbit Event Theme
-    - name: 'twitter:description'
-      value: The preview of the Event theme
-    - name: 'twitter:image'
-      value: images/feature-3.jpg
-      relativeUrl: true
+# seo:
+#   title: "BUET CSE Fest 2022"
+#   description: The preview of the Event theme
+#   extra:
+#     - name: 'og:type'
+#       value: website
+#       keyName: property
+#     - name: 'og:title'
+#       value: Stackbit Event Theme
+#       keyName: property
+#     - name: 'og:description'
+#       value: The preview of the Event theme
+#       keyName: property
+#     - name: 'og:image'
+#       value: images/feature-3.jpg
+#       keyName: property
+#       relativeUrl: true
+#     - name: 'twitter:card'
+#       value: summary_large_image
+#     - name: 'twitter:title'
+#       value: Stackbit Event Theme
+#     - name: 'twitter:description'
+#       value: The preview of the Event theme
+#     - name: 'twitter:image'
+#       value: images/feature-3.jpg
+#       relativeUrl: true
 layout: advanced
 ---

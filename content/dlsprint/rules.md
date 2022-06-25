@@ -1,24 +1,24 @@
 ---
 title: "DLSprint 2022"
-seo:
-  title: DLSprint 2022 Rules & Regulations
-  description: Rules & Regulations page for BUET CSE Fest Deep Learning Sprint competition 2022.
-  extra:
-    - name: 'og:type'
-      value: website
-      keyName: property
-    - name: 'og:title'
-      value: Privacy Policy
-      keyName: property
-    - name: 'og:description'
-      value: This is the privacy policy page
-      keyName: property
-    - name: 'twitter:card'
-      value: summary
-    - name: 'twitter:title'
-      value: Privacy Policy
-    - name: 'twitter:description'
-      value: This is the privacy policy page
+# seo:
+#   title: DLSprint 2022 Rules & Regulations
+#   description: Rules & Regulations page for BUET CSE Fest Deep Learning Sprint competition 2022.
+#   extra:
+#     - name: 'og:type'
+#       value: website
+#       keyName: property
+#     - name: 'og:title'
+#       value: Privacy Policy
+#       keyName: property
+#     - name: 'og:description'
+#       value: This is the privacy policy page
+#       keyName: property
+#     - name: 'twitter:card'
+#       value: summary
+#     - name: 'twitter:title'
+#       value: Privacy Policy
+#     - name: 'twitter:description'
+#       value: This is the privacy policy page
 layout: page
 ---
 

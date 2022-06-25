@@ -13,18 +13,18 @@
         "has_secondary_nav": true,
         "secondary_nav_links": [
             {
-                "label": "About",
-                "url": "/about",
+                "label": "IUPC",
+                "url": "/iupc",
                 "style": "link"
             },
             {
-                "label": "Event",
-                "url": "/events",
+                "label": "DL Sprint",
+                "url": "/dlsprint",
                 "style": "link"
             },
             {
-                "label": "Tickets",
-                "url": "/thank-you",
+                "label": "Coming Soon",
+                "url": "#",
                 "style": "primary"
             }
         ],
@@ -35,6 +35,6 @@
         "has_secondary_nav": false,
         "has_tertiary_nav": false,
         "has_social": false,
-        "content": "&copy; Stackbit. All rights reserved. This Jamstack site was created with <a href=\"https://www.stackbit.com/?utm_source=deployed-footer\" target=\"_blank\" rel=\"noopener\">Stackbit</a>. Create yours <a href=\"https://app.stackbit.com/create?theme=event&utm_source=deployed-footer\" target=\"_blank\" rel=\"noopener\">now</a>"
+        "content": "&copy; BUET CSE Fest 2022. All rights reserved."
     }
 }
