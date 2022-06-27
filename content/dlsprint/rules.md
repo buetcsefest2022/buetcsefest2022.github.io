@@ -1,5 +1,5 @@
 ---
-title: "DL Sprint 2022"
+title: "DL Sprint Rules"
 layout: page
 ---
 # Rules and Regulations
