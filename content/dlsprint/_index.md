@@ -111,7 +111,7 @@ sections:
       - image: images/dlsprint/logo/ebl-ict.png
         image_alt: EBL ICT logo
         image_align: center
-        title: "EBL, ICT Divison BD"
+        title: "EBLICT, ICT Divison BD"
         subtitle: "Co-host"
         title_align: center
 
@@ -132,7 +132,7 @@ sections:
       - image: images/dlsprint/logo/ieee-cs.png
         image_alt: BUET IEEE CS logo
         image_align: center
-        title: "BUET IEEE CS"
+        title: "IEEE Computer Society BUET SBC"
         subtitle: "Co-host"
         title_align: center
 
