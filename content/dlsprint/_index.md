@@ -14,6 +14,10 @@ sections:
       - label: Register
         url: "https://docs.google.com/forms/d/e/1FAIpQLSflaPGAVZImwuDSFiwZ7rrIs7F0nzptntbYHcrHvrfSZ2I1KA/viewform"
         style: primary
+      - label: Kaggle Link
+        url: https://www.kaggle.com/competitions/dlsprint
+        style: secondary
+
     align: center
     padding_top: large
     padding_bottom: large
@@ -36,7 +40,7 @@ sections:
 
       - title: 2 Phases
         title_align: left
-        content: "**Phase 1:** July 1 - July 25 <br>**Phase 2:** July 29"
+        content: "<a href='https://www.kaggle.com/competitions/dlsprint' target='_blank'>**Phase 1:** July 1 - July 25</a><br>**Phase 2:** July 29"
         content_align: left
         image: images/2-tracks.svg
         image_alt: Section item 2 icon
@@ -86,7 +90,7 @@ sections:
               <th></th>  <th>Location</th>                 <th>Date & Time</th>  
             </tr>
             <tr>
-              <td>Phase 1</td>  <td>Kaggle</td>             <td>July 1 - July 25, 2022</td>
+              <td>Phase 1</td>  <td><a href='https://www.kaggle.com/competitions/dlsprint' target='_blank'>Kaggle</a></td>             <td>July 1 - July 25, 2022</td>
             </tr>
             <tr>
               <td>Phase 2</td>  <td>Dept of CSE, BUET</td>  <td>July 29, 2022</td>
@@ -148,46 +152,58 @@ sections:
     title: Frequently Asked Questions
     grid_items:
 
-      - title: What is the application process ?
+      - title: What is the application process?
         title_align: left
         content: >-
           Please register through this **[form.](https://docs.google.com/forms/d/e/1FAIpQLSflaPGAVZImwuDSFiwZ7rrIs7F0nzptntbYHcrHvrfSZ2I1KA/viewform)**
         content_align: left
       
-      - title: Is there any age limit ?
+      - title: Is there any age limit?
         title_align: left
         content: >-
           No.
         content_align: left
 
-      - title: Will it be held online ?
+      - title: Will it be held online?
         title_align: left
         content: >-
           The first phase will be held online and hosted on Kaggle.  The competition link will be available on July 1, 2022. The final round will be held on the premises of the Department of CSE, BUET
         content_align: left
 
-      - title: Are the participants required to attend the competition physically ?
+      - title: Are the participants required to attend the competition physically?
         title_align: left
         content: >-
           For the final onsite round, at least one member of the team should be present physically at the premises of  Department of CSE, BUET.
         content_align: left
 
-      - title: Do I need to show any verification documents ?
+      - title: Do I need to show any verification documents?
         title_align: left
         content: >-
           You might have to show verification documents at any stage of the competition if the DL Sprint Organizing Committee wishes to verify you.
         content_align: left
       
-      - title: If I have more enquiries, where can I contact ?
+      - title: If I have more enquiries, where can I contact?
         title_align: left
         content: >-
           Please contact us via dlsprint2022@gmail.com. For queries related to the competition problem, please post it on the discussion of the Kaggle competition page of DL Sprint.
         content_align: left
 
-      - title: Can someone use my name and participate in the competition ?
+      - title: Can someone use my name and participate in the competition?
         title_align: left
         content: >-
           No, we do not tolerate any kind of misrepresentation.
+        content_align: left
+
+      - title: When is the registration deadline?
+        title_align: left
+        content: >-
+          July 24, 2022.
+        content_align: left
+
+      - title: Is this competition only for BUET students?
+        title_align: left
+        content: >-
+          Nope. This is an open for all competiton, regardless of institution. Graduates and professionals can also join.
         content_align: left
 
     grid_cols: two
