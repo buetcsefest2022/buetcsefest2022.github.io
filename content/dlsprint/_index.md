@@ -60,14 +60,10 @@ sections:
     align: center
     background_color: secondary
 
-
-  - type: grid_section
-    title: Event Overview
-    grid_items:
-
-      - title: ""
-        title_align: left
-        content: >-
+  - type: features_section
+    title: Event Description
+    features:
+      - content: >-
           Bengali is the fifth most spoken of all native languages all over the world. But so far very little work has been done on Bengali Speech Transcription. Considering the large audience and far reaching opportunities, there’s significant business and educational interest in developing AI that can be used in Bengali ASR (Automatic Speech Recognition).
 
           <br><br>
@@ -78,11 +74,9 @@ sections:
 
           <br><br>
           So what are you waiting for? Let the sprint begin!
-        content_align: left
-      
-      - title: "Schedule"
-        title_align: left
-        content: >-
+          <br><br>
+
+          <center><h3>Schedule</h3></center>
           <table>
             <tr>
               <th></th>  <th>Location</th>                 <th>Date & Time</th>  
@@ -97,12 +91,12 @@ sections:
               <td>Prize Giving</td>  <td>Dept of CSE, BUET</td>  <td>*August 6, 2022</td>
             </tr>
           </table>
-        content_align: left
-    grid_cols: two
-    grid_gap_horiz: medium
-    grid_gap_vert: medium
-    padding_top: large
-    padding_bottom: large
+
+        align: left
+    feature_padding_vert: medium
+    align: center
+    padding_top: medium
+    padding_bottom: medium
     background_color: none
 
   - type: grid_section

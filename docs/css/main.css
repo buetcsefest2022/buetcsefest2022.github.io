@@ -190,11 +190,11 @@ body {
 }
 
 .style-classic.font-serif {
-  font-family: "Lora", "Lucida Bright", "Lucidabright", "Lucida Serif", Lucida, Georgia, serif;
+  font-family: "PT Serif", "Lucida Bright", "Lucidabright", "Lucida Serif", Lucida, Georgia, serif;
 }
 
 .style-classic.font-sans-serif {
-  font-family: "Nunito", Lato, sans-serif;
+  font-family: "Lato", Lato, sans-serif;
 }
 
 .style-bold.font-serif {
@@ -202,7 +202,7 @@ body {
 }
 
 .style-bold.font-sans-serif {
-  font-family: "Poppins", "Helvetica Neue", Helvetica, "Roboto", sans-serif;
+  font-family: "Inter", "Helvetica Neue", Helvetica, "Roboto", sans-serif;
 }
 
 .style-minimal.font-serif {
@@ -233,6 +233,7 @@ h5,
 .h5,
 h6,
 .h6 {
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   line-height: 1.2;
   margin: 1.25em 0 0.5em;
@@ -3394,7 +3395,7 @@ figcaption {
 }
 
 .style-classic.palette-blue .btn--primary {
-  background-color: #7076f0;
+  background-color: #006eff;
 }
 
 .style-classic.palette-green .btn--primary {
@@ -3402,7 +3403,7 @@ figcaption {
 }
 
 .style-classic.palette-red .btn--primary {
-  background-color: #ef3054;
+  background-color: #da2f4f;
 }
 
 .style-bold.palette-blue .btn--primary {
@@ -4060,7 +4061,7 @@ body.has-theme-bar #site-wrap {
 
 @media (min-width: 801px) {
   .style-classic.palette-blue .navbar__menu a:not(.btn):after {
-    background: #7076f0;
+    background: #006eff;
   }
 }
 
@@ -4072,7 +4073,7 @@ body.has-theme-bar #site-wrap {
 
 @media (min-width: 801px) {
   .style-classic.palette-red .navbar__menu a:not(.btn):after {
-    background: #ef3054;
+    background: #da2f4f;
   }
 }
 
@@ -4352,7 +4353,7 @@ body.has-theme-bar #site-wrap {
 }
 
 .style-classic.palette-blue .bg-primary {
-  background-color: #7076f0;
+  background-color: #006eff;
 }
 
 .style-classic.palette-green .bg-primary {
@@ -4360,7 +4361,7 @@ body.has-theme-bar #site-wrap {
 }
 
 .style-classic.palette-red .bg-primary {
-  background-color: #ef3054;
+  background-color: #da2f4f;
 }
 
 .style-bold.palette-blue .bg-primary {
@@ -4388,7 +4389,7 @@ body.has-theme-bar #site-wrap {
 }
 
 .style-classic.palette-blue .section__title:after {
-  background-color: #7076f0;
+  background-color: #006eff;
 }
 
 .style-classic.palette-green .section__title:after {
@@ -4396,7 +4397,7 @@ body.has-theme-bar #site-wrap {
 }
 
 .style-classic.palette-red .section__title:after {
-  background-color: #ef3054;
+  background-color: #da2f4f;
 }
 
 .style-classic .bg-primary .section__title:after {
@@ -4861,7 +4862,7 @@ body.has-theme-bar #site-wrap {
 }
 
 .style-classic.palette-blue .card .btn--primary {
-  background-color: #7076f0;
+  background-color: #006eff;
 }
 
 .style-classic.palette-green .card .btn--primary {
@@ -4869,7 +4870,7 @@ body.has-theme-bar #site-wrap {
 }
 
 .style-classic.palette-red .card .btn--primary {
-  background-color: #ef3054;
+  background-color: #da2f4f;
 }
 
 .style-bold.palette-blue .card .btn--primary {

@@ -4,19 +4,19 @@
 $theme-styles: (
 	classic: (
 		fonts: (
-			serif: ('Lora', 'Lucida Bright', 'Lucidabright', 'Lucida Serif', Lucida, Georgia, serif),
-			sans-serif: ('Nunito', Lato, sans-serif)
+			serif: ('PT Serif', 'Lucida Bright', 'Lucidabright', 'Lucida Serif', Lucida, Georgia, serif),
+			sans-serif: ('Lato', Lato, sans-serif)
 		),
 		colors: (
-			blue:  #7076f0,
+			blue:  #006eff,
 			green: #16db65,
-			red:   #ef3054
+			red:   #da2f4f
 		)
 	),
 	bold: (
 		fonts: (
 			serif: ('Arvo', 'Rockwell', Georgia, Times, 'Times New Roman', serif),
-			sans-serif: ('Poppins', 'Helvetica Neue', Helvetica, 'Roboto', sans-serif)
+			sans-serif: ('Inter', 'Helvetica Neue', Helvetica, 'Roboto', sans-serif)
 		),
 		colors: (
 			blue:  #2859da,

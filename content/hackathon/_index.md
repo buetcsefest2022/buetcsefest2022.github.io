@@ -3,8 +3,8 @@ title: Hackathon
 sections:
   - type: hero_section
     title: "BUET CSE Fest 2022 Hackathon"
-    subtitle: "Presented by Optimizely"
-    content: '**April 14 - 16, 2021**'
+    subtitle: "Powered by Optimizely"
+    content: '**July 28 - July 29, 2022**'
     actions:
       - label: Rulebook
         url: /files/rulebook.pdf
@@ -17,8 +17,8 @@ sections:
     padding_top: large
     padding_bottom: large
     background_color: primary
-    background_image: images/hero-background.jpg
-    background_image_opacity: 15
+    background_image: images/feature-3.jpg
+    background_image_opacity: 35
     background_image_size: cover
 
   - type: grid_section
