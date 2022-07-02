@@ -112,28 +112,28 @@ sections:
     subtitle: ""
     align: center
     grid_items:
-      - image: images/dlsprint/logo/ebl-ict.png
+      - image: images/logo/eblict.png
         image_alt: EBL ICT logo
         image_align: center
         title: "EBLICT, ICT Divison BD"
         subtitle: "Co-host"
         title_align: center
 
-      - image: images/dlsprint/logo/bengal-ai-dark.png
+      - image: images/logo/bengali-ai.png
         image_alt: Bengali AI Community logo
         image_align: center
         title: "Bengali.AI Community"
         subtitle: "Partner"
         title_align: center
 
-      - image: images/dlsprint/logo/incepta.png
+      - image: images/logo/incepta.png
         image_alt: Incepta Solutions logo
         image_align: center
         title: "Incepta Solutions Limited"
         subtitle: "Co-sponsor"
         title_align: center
 
-      - image: images/dlsprint/logo/ieee-cs.png
+      - image: images/logo/ieee-cs-black.png
         image_alt: BUET IEEE CS logo
         image_align: center
         title: "IEEE Computer Society BUET SBC"
