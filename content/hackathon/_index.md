@@ -33,7 +33,7 @@ sections:
         image_position: left
         image_width: twenty-five
 
-      - title: 3 Categories
+      - title: 3 Segments
         title_align: left
         content: "Categories to compete in: DevOps, API, Web3"
         content_align: left
@@ -143,55 +143,37 @@ sections:
         media_width: sixty
 
   - type: grid_section
-    title: Categories
+    title: Segments
     grid_items:
-      - title: ""
+      - title: "DevOps"
         title_align: left
         content: |-
-          ### Web3
-          Watch only access for Base Camp track
-          * Conference Stickers
-          * Quisque eleifend imperdiet tortor
-          * Elementum eu rhoncus, volutpat
+          Participants will be given a basic application and asked to build a CI/CD pipeline which might include-
+          
+          - Deployment, integration, testing and monitoring
+          - Make the workflow more seamless
+          - System’s ability to handle different kinds of workloads
         content_align: left
-        actions:
-          - label: Registration
-            url: "#"
-            style: primary
-        actions_align: left
-        actions_width: full-width
 
-      - title: ""
+      - title: "Cloud & API"
         title_align: left
         content: |-
-          ### Cloud & API
-          Watch only access for Base Camp track
-          * Conference Stickers
-          * Quisque eleifend imperdiet tortor
-          * Elementum eu rhoncus, volutpat
+          Participants will- 
+          - Leverage existing public APIs
+          - Include prevalent AI tasks offered by popular cloud provider
+          - Intergrate social media through APIs/SDKs 
+          - Architect application according to the requirements of problem
         content_align: left
-        actions:
-          - label: Registration
-            url: "#"
-            style: primary
-        actions_align: left
-        actions_width: full-width
 
-      - title: ""
+      - title: "Web3"
         title_align: left
         content: |-
-          ### DevOps
-          Watch only access for Base Camp track
-          * Conference Stickers
-          * Quisque eleifend imperdiet tortor
-          * Elementum eu rhoncus, volutpat
+          Participants will- 
+          - Implement application requiring decentralization, disintermediation or transparency
+          - Write Smart Contracts
+          - Build front-ends to interact with contracts
+          - Additional tasks leveraging other Web3 technologies
         content_align: left
-        actions:
-          - label: Registration
-            url: "#"
-            style: primary
-        actions_align: left
-        actions_width: full-width
 
     grid_cols: three
     grid_gap_horiz: small
