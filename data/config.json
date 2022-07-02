@@ -13,6 +13,11 @@
         "has_secondary_nav": true,
         "secondary_nav_links": [
             {
+                "label": "Hackathon",
+                "url": "/hackathon",
+                "style": "link"
+            },
+            {
                 "label": "DL Sprint",
                 "url": "/dlsprint",
                 "style": "link"

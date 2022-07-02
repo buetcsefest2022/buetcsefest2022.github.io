@@ -1,8 +1,6 @@
 ---
 title: DL Sprint
 sections:
-  - type: header_menu
-    
   - type: hero_section
     title: "Deep Learning Sprint 2022"
     subtitle: Presented by BUET CSE Fest 2022 & Bengali.AI Community
@@ -147,7 +145,6 @@ sections:
     padding_bottom: large
     background_color: secondary
 
-
   - type: grid_section
     title: Frequently Asked Questions
     grid_items:
@@ -237,12 +234,11 @@ sections:
         content: |-
           Department of CSE, BUET <br>
           Bangladesh University of Engineering & Technology, Dhaka-1100 <br>
-
-          **Email Us:** buetcsefest2022@gmail.com <br>
-          **Website:** https://buetcsefest2022.com
-      - title: Follow Us
+      - title: Contact Us
         content: |-
-          [Facebook](https://www.facebook.com/buetcsefest2022)<br/>
+          **Email Us:** buetcsefest2022@gmail.com <br>
+          **Website:** https://buetcsefest2022.com <br>
+          **Facebook:** https://fb.me/buetcsefest2022
     grid_cols: two
     grid_gap_horiz: medium
     grid_gap_vert: large
@@ -251,6 +247,6 @@ sections:
     padding_top: medium
     padding_bottom: medium
     background_color: none
-
+    
 layout: advanced
 ---
