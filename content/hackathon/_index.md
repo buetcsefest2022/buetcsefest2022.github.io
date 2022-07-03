@@ -62,11 +62,7 @@ sections:
     title: Event Description
     features:
       - content: >-
-          We will arrange a **two-day long** Hackathon which will have a **24-hour** coding sprint followed by presentation and judgment. The competition will have 3 segments - **DevOps, API and Web3**. Teams will have to participate **onsite**. It’s ideal to form teams with people having diverse skill sets which are necessary for that particular segment. The teams will be provided with the problem statement at the start of the onsite event. Teams will get help from mentors and problem setters throughout the event. The solution will mostly be a prototype and does not necessarily have to be a complete solution. **After the sprint is over the participants will give a presentation on the solution they developed to a panel of judges. The judging criteria will be provided to participants on the day of the event.**
-
-          <br><br>
-
-          Teams from universities from all over the country are eligible to participate in this competition. Even beginners with no prior experience are encouraged to participate as we will hold several workshops to give you an idea about the concepts and technologies of the segment you’re interested in.
+          The Hackathon will be a two-day event - organized by the **Department of Computer Science and Engineering, BUET**- with a 24-hour long coding sprint followed by presentation and judging. This will be an **onsite hackathon** held on the premises of BUET. We will arrange mentors and workshops for each segment so beginners are highly encouraged to participate. The segments for this year's Hackathon are threefold - **DevOps, API and Web3**. And we're collaborating with the amazing engineers over at **Optimizely** to make this event a huge success!
 
           <br><br>
 
@@ -155,21 +151,19 @@ sections:
           - System’s ability to handle different kinds of workloads
         content_align: left
 
-      - title: "Cloud & API"
+      - title: "API & Cloud Services"
         title_align: left
         content: |-
-          Participants will- 
-          - Leverage existing public APIs
+          Participants will leverage existing public APIs and services to build an application. 
           - Include prevalent AI tasks offered by popular cloud provider
           - Intergrate social media through APIs/SDKs 
           - Architect application according to the requirements of problem
         content_align: left
 
-      - title: "Web3"
+      - title: "Web3 & Blockchain"
         title_align: left
         content: |-
-          Participants will- 
-          - Implement application requiring decentralization, disintermediation or transparency
+          Participants will implement an application requiring decentralization, disintermediation or transparency.
           - Write Smart Contracts
           - Build front-ends to interact with contracts
           - Additional tasks leveraging other Web3 technologies
@@ -276,7 +270,7 @@ sections:
       - title: Can I register for multiple segments?
         title_align: left
         content: >-
-          Participants can register for multiple segments but they can only participate in a single segment for the Hackathon. 
+          Participants can register for multiple segments but they will only be selected to participate in a single segment for the Hackathon. 
         content_align: left
       
       - title: How do I decide which segment is suitable for me?
