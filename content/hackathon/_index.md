@@ -6,11 +6,11 @@ sections:
     subtitle: "Powered by Optimizely"
     content: '**July 28 - July 29, 2022**'
     actions:
-      - label: Rulebook
-        url: /files/rulebook.pdf
+      - label: Rules
+        url: https://buetcsefest2022.com/hackathon/rules
         style: primary
       - label: Register
-        url: "#"
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSePAz38gAUTJg9oFAILqV5XPpcYf7W3YJIHIl9rqb2oSfOpRQ/viewform?fbclid=IwAR2n--9o23Sehga2SELVibiYN288CDJYPQvJoDbgtIHNzCrzAXN8bW6RF80"
         style: secondary
 
     align: center
