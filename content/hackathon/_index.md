@@ -3,14 +3,14 @@ title: Hackathon
 sections:
   - type: hero_section
     title: "BUET CSE Fest 2022 Hackathon"
-    subtitle: "Powered by Optimizely"
+    subtitle: "Presented by Optimizely"
     content: '**July 28 - July 29, 2022**'
     actions:
       - label: Rules
-        url: https://buetcsefest2022.com/hackathon/rules
+        url: "/hackathon/rules"
         style: primary
       - label: Register
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSePAz38gAUTJg9oFAILqV5XPpcYf7W3YJIHIl9rqb2oSfOpRQ/viewform?fbclid=IwAR2n--9o23Sehga2SELVibiYN288CDJYPQvJoDbgtIHNzCrzAXN8bW6RF80"
+        url: "/hackathon/register"
         style: secondary
 
     align: center
@@ -332,7 +332,7 @@ sections:
     title: Join us in this exciting hackathon journey!
     actions:
       - label: Register
-        url: "#"
+        url: "/hackathon/register"
         style: primary
         has_icon: true
         icon: arrow-right
