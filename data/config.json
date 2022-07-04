@@ -5,9 +5,10 @@
     "palette": "green",
     "mode": "light",
     "base_font": "sans-serif",
+    "favicon": "images/favicon.png",
     "header": {
         "title": "Event",
-        "logo": "images/fest-logo.png",
+        "logo": "images/brand-dark.png",
         "logo_alt": "Fest Logo",
         "has_primary_nav": false,
         "has_secondary_nav": true,
