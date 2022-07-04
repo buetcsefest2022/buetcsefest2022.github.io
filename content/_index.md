@@ -140,7 +140,7 @@ sections:
     features:
       - title: Intra University Programming Contest
         content: >-
-          The biggest inter university programming contest is here once again! Team up and get a chance to win the BUET IUPC 2022 along with a total of 250K+ worth of prize money!
+          The biggest inter university programming contest is here once again! Team up and get a chance to win the BUET IUPC 2022!
         align: right
         image: images/iupc/cover.jpg
         image_alt: Feature 1 placeholder image
