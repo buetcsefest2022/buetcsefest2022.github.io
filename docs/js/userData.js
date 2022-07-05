@@ -56,25 +56,11 @@ const getParams = () => {
 /*****                               UUID                                  *****/
 /*******************************************************************************/
 
-const localStorageUUIDKEY = "userId";
-
 const getUserId = () => {
-    let userId = localStorage.getItem(localStorageUUIDKEY);
+    userId = uuidv4();
 
-    if (!userId) {
-        userId = uuidv4();
-        // localStorage.setItem(localStorageUUIDKEY, userId);
-
-        return {
-            userId,
-            isUpdate: false,
-        }
-    }
-    else {
-        return {
-            userId,
-            isUpdate: true,
-        }
+    return {
+        userId
     }
 }
 
@@ -85,99 +71,101 @@ const getUserId = () => {
 
 
 const sendUserDataToServer = async () => {
-    let userData = {}
+    let userId = localStorage.getItem("userId");
 
-    var parser = new UAParser();
+    if(!userId){
+        let userData = {}
 
-    const userAgent = window.navigator.userAgent
-    parser.setUA(userAgent)
-    //console.log(parser.getResult());
+        var parser = new UAParser();
 
-    userData = parser.getResult()
+        const userAgent = window.navigator.userAgent
+        parser.setUA(userAgent)
+        //console.log(parser.getResult());
 
-    if (userData.device.type == null){
-        userData.device.type = "desktop/laptop"
-    }
+        userData = parser.getResult()
 
-    delete userData.browser.major
-
-    let url = new URL(window.location.href)
-    let urlSource = url.hostname.split('.')[0]
-
-    if(urlSource == 'localhost' || urlSource == '127'){
-        return
-    }
-
-    if(urlSource == 'buetcsefest2022'){
-        urlSource = 'main'
-    }
-
-    userData.source = urlSource
-
-
-    $.ajax('http://ip-api.com/json')
-    .then(
-        function success(response) {
-            userData.isp = response.isp
-            userData.ip = response.query
-            userData.timezone = response.timezone 
-        },
-  
-        function fail(data, status) {
-            console.log('Request failed.  Returned status of',
-                        status);
+        if (userData.device.type == null){
+            userData.device.type = "desktop/laptop"
         }
-    );
 
-    const userIdInfo = getUserId();
-    userData.userId = userIdInfo.userId
-    //console.log(userIdInfo)
+        delete userData.browser.major
 
-    userData.utm = getParams()
+        let url = new URL(window.location.href)
+        let urlSource = url.hostname.split('.')[0]
+
+        if(urlSource == 'localhost' || urlSource == '127'){
+            return
+        }
+
+        if(urlSource == 'buetcsefest2022'){
+            urlSource = 'main'
+        }
+
+        userData.source = urlSource
 
 
-    await navigator.geolocation.getCurrentPosition(function(position){
-        latitude = position.coords.latitude;
-        longitude = position.coords.longitude;
+        $.ajax('https://jsonip.com/')
+        .then(
+            function success(response) {
+                userData.ip = response.ip
+            },
+    
+            function fail(data, status) {
+                console.log('Request failed.  Returned status of',
+                            status);
+            }
+        );
 
-        console.log(latitude, longitude);
+        const userIdInfo = getUserId();
+        userData.userId = userIdInfo.userId
+        localStorage.setItem("userId", userData.userId);
+        //console.log(userIdInfo)
 
-        $.getJSON('https://api.geoapify.com/v1/geocode/reverse?lat='+latitude+'&lon='+longitude+'&apiKey=c43472efc7374853a471479c85954ee7', function(data) {
+        userData.utm = getParams()
 
-            let location = data.features[0].properties
-            delete location.housenumber
-            delete location.street
-            delete location.county
-            delete location.datasource
-            delete location.distance
-            delete location.result_type
-            delete location.name
-            delete location.formatted
-            delete location.address_line1
-            delete location.address_line2
-            delete location.rank
-            delete location.place_id
-            delete location.county_code
 
-            //console.log(data.features[0].properties);
-            userData.location = data.features[0].properties
-            console.log(userData)
+        await navigator.geolocation.getCurrentPosition(function(position){
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
 
-            $.ajax(`${BACKEND_URL}/userdata`, {
-                data : JSON.stringify({"userData": userData}),
-                contentType : 'application/json',
-                type : 'POST',
-            })
+            //console.log(latitude, longitude);
+
+            $.getJSON('https://api.geoapify.com/v1/geocode/reverse?lat='+latitude+'&lon='+longitude+'&apiKey=c43472efc7374853a471479c85954ee7', function(data) {
+
+                let location = data.features[0].properties
+                delete location.housenumber
+                delete location.street
+                delete location.county
+                delete location.datasource
+                delete location.distance
+                delete location.result_type
+                delete location.name
+                delete location.formatted
+                delete location.address_line1
+                delete location.address_line2
+                delete location.rank
+                delete location.place_id
+                delete location.county_code
+
+                userData.location = data.features[0].properties
+                console.log(userData)
+
+                $.ajax(`${BACKEND_URL}/userdata`, {
+                    data : JSON.stringify({"userData": userData}),
+                    contentType : 'application/json',
+                    type : 'POST',
+                })
+            });
+
+
+        }, function(err) {
+
+        } , {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
         });
-
-
-    }, function(err) {
-
-    } , {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-    });
+    }
 
 }
 
