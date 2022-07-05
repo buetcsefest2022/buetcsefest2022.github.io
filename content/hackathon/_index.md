@@ -291,10 +291,10 @@ sections:
           After submitting the form participants can modify the input until the final date of registration. After the registration period is over we will perform an initial screening and decide the participants for onsite Hackathon.
         content_align: left
       
-      - title: Do I need to pay a registration fee before selection?
+      - title: Do I need to pay a registration fee?
         title_align: left
         content: >-
-          Only selected participants will pay the registration fee.
+          Registration is completely free for all participants!
         content_align: left
 
     grid_cols: three
