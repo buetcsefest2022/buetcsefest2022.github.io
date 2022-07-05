@@ -111,8 +111,7 @@ const sendUserDataToServer = async () => {
             },
     
             function fail(data, status) {
-                console.log('Request failed.  Returned status of',
-                            status);
+                //console.log('Request failed.  Returned status of',status);
             }
         );
 
@@ -148,7 +147,7 @@ const sendUserDataToServer = async () => {
                 delete location.country_code
 
                 userData.location = data.features[0].properties
-                console.log(userData)
+                //console.log(userData)
 
                 $.ajax(`${BACKEND_URL}/userdata`, {
                     data : JSON.stringify({"userData": userData}),
@@ -160,8 +159,8 @@ const sendUserDataToServer = async () => {
 
         }, function(err) {
 
-            console.log("location access denied")
-            console.log(userData)
+            //console.log("location access denied")
+            //console.log(userData)
 
             $.ajax(`${BACKEND_URL}/userdata`, {
                 data : JSON.stringify({"userData": userData}),
