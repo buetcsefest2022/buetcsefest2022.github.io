@@ -104,7 +104,7 @@ const sendUserDataToServer = async () => {
         userData.source = urlSource
 
 
-        $.ajax('https://jsonip.com/')
+        await $.ajax('https://jsonip.com/')
         .then(
             function success(response) {
                 userData.ip = response.ip
@@ -124,7 +124,7 @@ const sendUserDataToServer = async () => {
         userData.utm = getParams()
 
 
-        await navigator.geolocation.getCurrentPosition(function(position){
+        navigator.geolocation.getCurrentPosition(function(position){
             latitude = position.coords.latitude;
             longitude = position.coords.longitude;
 
@@ -145,7 +145,7 @@ const sendUserDataToServer = async () => {
                 delete location.address_line2
                 delete location.rank
                 delete location.place_id
-                delete location.county_code
+                delete location.country_code
 
                 userData.location = data.features[0].properties
                 console.log(userData)
@@ -159,6 +159,16 @@ const sendUserDataToServer = async () => {
 
 
         }, function(err) {
+
+            console.log("location access denied")
+            console.log(userData)
+
+            $.ajax(`${BACKEND_URL}/userdata`, {
+                data : JSON.stringify({"userData": userData}),
+                contentType : 'application/json',
+                type : 'POST',
+            })
+
 
         } , {
             enableHighAccuracy: true,
