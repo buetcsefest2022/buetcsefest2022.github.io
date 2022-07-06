@@ -102,14 +102,21 @@ sections:
   - type: features_section
     title: Requirements & Constraints
     features:
-      - content: >-
-          **Eligibility:**  Anyone from any university currently pursuing their undergrad are eligible to participate!
-          <br><br>
-          **Account:**  An account in [**codingame**](https://www.codingame.com/start)
-          <br><br>
-          **Languages:**  Any language starting from C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#
-
+      - title: Eligibility
+        content: >-
+          Anyone from any university currently pursuing their undergrad are eligible to participate!
         content_align: left
+
+      - title: Account
+        content: >-
+          An account in [**codingame**](https://www.codingame.com/start)
+        content_align: left
+
+      - title: Languages
+        content: >-
+          Any language starting from **C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#**
+        content_align: left
+
     feature_padding_vert: medium
     align: center
     padding_top: medium
@@ -186,11 +193,7 @@ sections:
     align: center
     padding_top: large
     padding_bottom: large
-    background_color: secondary
-    background_image: images/faq-background.svg
-    background_image_repeat: repeat
-    background_image_size: auto
-    background_image_opacity: 15
+    background_color: none
 
   - type: cta_section
     title: What are you waiting for?
