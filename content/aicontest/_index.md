@@ -96,7 +96,7 @@ sections:
 
 
   - type: grid_section
-  title: Requirements & Constraints
+    title: Requirements & Constraints
     grid_items:
       - title: Eligibility
         title_align: left
