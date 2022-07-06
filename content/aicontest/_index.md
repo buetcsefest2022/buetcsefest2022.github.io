@@ -103,13 +103,13 @@ sections:
     title: Requirements & Constraints
     features:
       - content: >-
-          **Eligibility:** Anyone from any university currently pursuing their undergrad are eligible to participate!
+          **Eligibility:**  Anyone from any university currently pursuing their undergrad are eligible to participate!
           <br><br>
-          **Account** An account in [**codingame**](https://www.codingame.com/start)
+          **Account:**  An account in [**codingame**](https://www.codingame.com/start)
           <br><br>
-          **Languages** Any language starting from C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#
+          **Languages:**  Any language starting from C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#
 
-        align: left
+        content_align: left
     feature_padding_vert: medium
     align: center
     padding_top: medium
@@ -179,7 +179,7 @@ sections:
           **NO!!** You will get a **time period of 1 week(+)** to submit, edit, re-submit your code as much as you want. The scoring will be done based on codingame's automated system, which accounts for submission time only for contestants tied to the same score. You can read about [**codingame rules**](https://www.codingame.com/rules)
         content_align: left
 
-    grid_cols: two
+    grid_cols: one
     grid_gap_horiz: medium
     grid_gap_vert: small
     enable_cards: false
