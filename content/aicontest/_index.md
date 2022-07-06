@@ -18,7 +18,7 @@ sections:
     padding_bottom: large
     background_color: primary
     background_image: images/ai-contest/cover.jpg
-    background_image_opacity: 35
+    background_image_opacity: 75
     background_image_size: cover
 
   - type: grid_section
@@ -117,7 +117,7 @@ sections:
         content_align: left
     
     grid_cols: three
-    grid_gap_horiz: medium
+    grid_gap_horiz: large
     grid_gap_vert: medium
     enable_cards: false
     align: center
@@ -200,12 +200,6 @@ sections:
         content: >-
           **YES!!** The only knowledge that you need to have is how to write conditionals (*if-else*) and loops (*for, while*) in any language and you're good to go!
         content_align: left
-      
-      - title: I am an absolute beginner with no experience in any contests whatsoever. Can I do any good   participating here?
-        title_align: left
-        content: >-
-          **OF COURSE!!** This contest is designed so that even beginners can have fun participating. And we will be providing a skeleton sample code from where you can start.
-        content_align: left
 
       - title: Will there be any penalty for multiple submissions or late submissions?
         title_align: left
@@ -213,6 +207,13 @@ sections:
           **NO!!** You will get a **time period of 1 week(+)** to submit, edit, re-submit your code as much as you want. The scoring will be done based on codingame's automated system, which accounts for submission time only for contestants tied to the same score. You can read about [**codingame rules**](https://www.codingame.com/rules)
         content_align: left
 
+      - title: I am an absolute beginner with no experience in any contests whatsoever. Can I do any good   participating here?
+        title_align: left
+        content: >-
+          **OF COURSE!!** This contest is designed so that even beginners can have fun participating. And we will be providing a skeleton sample code from where you can start.
+        content_align: left    
+    
+    
     grid_cols: one
     grid_gap_horiz: medium
     grid_gap_vert: small
