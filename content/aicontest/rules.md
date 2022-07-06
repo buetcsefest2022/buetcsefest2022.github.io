@@ -2,7 +2,7 @@
 title: "AI Contest Rules"
 layout: page
 ---
-## Rules and Regulations
+### Rules and Regulations
 
 1. The event will be an **online** and **individual** contest
 

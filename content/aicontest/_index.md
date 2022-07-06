@@ -18,7 +18,7 @@ sections:
     padding_bottom: large
     background_color: primary
     background_image: images/ai-contest/cover.jpg
-    background_image_opacity: 0
+    background_image_opacity: 35
     background_image_size: cover
 
   - type: grid_section
@@ -98,17 +98,17 @@ sections:
   - type: features_section
     title: Requirements & Constraints
     features:
-      - subtitle: '**Eligibility**'
+      - subtitle: **Eligibility**
         content: >-
           Anyone from any university currently pursuing their undergrad are eligible to participate!
         content_align: left
 
-      - subtitle: '**Account**'
+      - subtitle: **Account**
         content: >-
           An account in [**codingame**](https://www.codingame.com/start)
         content_align: left
 
-      - subtitle: '**Languages**'
+      - subtitle: **Languages**
         content: >-
           Any language starting from **C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#**
         content_align: left
