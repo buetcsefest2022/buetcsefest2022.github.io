@@ -158,6 +158,24 @@ sections:
     padding_bottom: large
     background_color: none
 
+  - type: features_section
+    title: Still have further queries?
+    features:
+      - content: >-
+          Make sure to go through this FAQ section and the Rules first. But if you still have unresolved queries you can contact us -
+          <br><br>
+          
+          **Facebook Page:** https://fb.me/e/1IRx8qUCY
+          **Email:** aicontest@buetcsefest2022.com
+
+        align: center
+    feature_padding_vert: medium
+    align: center
+    padding_top: medium
+    padding_bottom: medium
+    background_color: none
+
+
   - type: cta_section
     title: What are you waiting for?
     actions:
