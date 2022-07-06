@@ -4,7 +4,7 @@ sections:
   - type: hero_section
     title: "BUET CSE Fest 2022 AI Contest"
     subtitle: Presented By optimizely
-    content: 10:00 am 15 July - 10:00 am 22 July, 2022
+    content: July 15 - July 22, 2022
     actions:
       - label: Rules
         url: "/aicontest/rules"
@@ -18,24 +18,26 @@ sections:
     padding_bottom: large
     background_color: primary
     background_image: images/ai-contest/cover.jpg
-    background_image_opacity: 35
+    background_image_opacity: 0
     background_image_size: cover
 
   - type: grid_section
     grid_items:
-      - title: "10:00 am 15 July - 10:00 am 22 July"
+      - title: "July 15 - July 22"
         title_align: left
         content: >-
-          A 7 days long online individual AI Contest.
+          A 7 days long online individual AI Contest. The contest will be in multiplayer mode.
         content_align: left
         image: images/2-days.svg
         image_alt: Section item 1 icon
         image_position: left
         image_width: twenty-five
 
-      - title: Multiplayer Game
+      - title: Constraints
         title_align: left
-        content: "Your AI players will compete agianst other AI players"
+        content: "- **Anyone from any university currently pursuing their undergrad** are eligible to participate!
+        - An account in [**codingame**](https://www.codingame.com/start)
+        - Any language starting from **C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#**"
         content_align: left
         image: images/2-tracks.svg
         image_alt: Section item 2 icon
@@ -87,7 +89,7 @@ sections:
           </tr>
           <tr>
               <td>Prize Giving</td>
-              <td></td>
+              <td>August 6, 2022</td>
           </tr>
           </table>
 
