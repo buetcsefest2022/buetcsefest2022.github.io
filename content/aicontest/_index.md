@@ -99,10 +99,10 @@ sections:
     background_color: none
 
 
-    - type: features_section
+  - type: features_section
     title: Requirements & Constraints
     features:
-      - content: >-
+        - content: >-
         **Eligibility:** Anyone from any university currently pursuing their undergrad are eligible to participate!
         <br><br>
         **Account** An account in [**codingame**](https://www.codingame.com/start)
