@@ -102,17 +102,17 @@ sections:
   - type: features_section
     title: Requirements & Constraints
     features:
-      - title: Eligibility
+      - subtitle: Eligibility
         content: >-
           Anyone from any university currently pursuing their undergrad are eligible to participate!
         content_align: left
 
-      - title: Account
+      - subtitle: Account
         content: >-
           An account in [**codingame**](https://www.codingame.com/start)
         content_align: left
 
-      - title: Languages
+      - subtitle: Languages
         content: >-
           Any language starting from **C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#**
         content_align: left
@@ -121,7 +121,7 @@ sections:
     align: center
     padding_top: medium
     padding_bottom: medium
-    background_color: none
+    background_color: secondary
 
 
 #   - type: grid_section
