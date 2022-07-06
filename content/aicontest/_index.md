@@ -3,7 +3,7 @@ title: AI Contest
 sections:
   - type: hero_section
     title: "BUET CSE Fest 2022 AI Contest"
-    subtitle: Presented By optimizely
+    subtitle: Presented By Optimizely
     content: July 15 - July 22, 2022
     actions:
       - label: Rules
@@ -78,10 +78,6 @@ sections:
               <th>Date & Time</th>
           </tr>
           <tr>
-              <td>Arrival</td>
-              <td>10:00 am 15 July</td>
-          </tr>
-          <tr>
               <td>Contest</td>
               <td>10:00 am 15 July - 10:00 am 22 July</td>
           </tr>
@@ -102,17 +98,17 @@ sections:
   - type: features_section
     title: Requirements & Constraints
     features:
-      - subtitle: Eligibility
+      - subtitle: '**Eligibility**'
         content: >-
           Anyone from any university currently pursuing their undergrad are eligible to participate!
         content_align: left
 
-      - subtitle: Account
+      - subtitle: '**Account**'
         content: >-
           An account in [**codingame**](https://www.codingame.com/start)
         content_align: left
 
-      - subtitle: Languages
+      - subtitle: '**Languages**'
         content: >-
           Any language starting from **C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#**
         content_align: left
