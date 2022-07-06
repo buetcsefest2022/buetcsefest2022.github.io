@@ -96,16 +96,26 @@ sections:
 
 
   - type: grid_section
+  title: Requirements & Constraints
     grid_items:
       - title: Eligibility
+        title_align: left
         content: |-
           Anyone from any university currently pursuing their undergrad are eligible to participate!
+        content_align: left
+      
       - title: Create Account
+        title_align: center
         content: |-
           An account in [**codingame**](https://www.codingame.com/start)
+        content_align: center
+      
       - title: Languages
+        title_align: left
         content: |-
           Any language starting from **C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#**
+        content_align: left
+    
     grid_cols: three
     grid_gap_horiz: medium
     grid_gap_vert: medium
