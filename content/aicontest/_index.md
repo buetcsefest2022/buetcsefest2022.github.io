@@ -105,10 +105,10 @@ sections:
         content_align: left
       
       - title: Create Account
-        title_align: center
+        title_align: left
         content: |-
           An account in [**codingame**](https://www.codingame.com/start)
-        content_align: center
+        content_align: left
       
       - title: Languages
         title_align: left
@@ -125,71 +125,6 @@ sections:
     padding_bottom: medium
     background_color: secondary
 
-
-#   - type: features_section
-#     title: Requirements & Constraints
-#     features:
-#       - title: Eligibility
-#         content: >-
-#           Anyone from any university currently pursuing their undergrad are eligible to participate!
-#         content_align: left
-
-#       - title: Account
-#         content: >-
-#           An account in [**codingame**](https://www.codingame.com/start)
-#         content_align: left
-
-#       - title: Languages
-#         content: >-
-#           Any language starting from **C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#**
-#         content_align: left
-
-#     feature_padding_vert: medium
-#     align: center
-#     padding_top: medium
-#     padding_bottom: medium
-#     background_color: secondary
-
-
-#   - type: grid_section
-#     title: Sponsors & Partners
-#     subtitle: ""
-#     align: center
-#     grid_items:
-#       - image: images/logo/eblict.png
-#         image_alt: EBL ICT logo
-#         image_align: center
-#         title: "EBLICT, ICT Divison BD"
-#         subtitle: "Co-host"
-#         title_align: center
-
-#       - image: images/logo/bengali-ai.png
-#         image_alt: Bengali AI Community logo
-#         image_align: center
-#         title: "Bengali.AI Community"
-#         subtitle: "Partner"
-#         title_align: center
-
-#       - image: images/logo/incepta.png
-#         image_alt: Incepta Solutions logo
-#         image_align: center
-#         title: "Incepta Solutions Limited"
-#         subtitle: "Co-sponsor"
-#         title_align: center
-
-#       - image: images/logo/ieee-cs-black.png
-#         image_alt: BUET IEEE CS logo
-#         image_align: center
-#         title: "IEEE Computer Society BUET SBC"
-#         subtitle: "Co-host"
-#         title_align: center
-
-#     grid_cols: four
-#     grid_gap_horiz: large
-#     grid_gap_vert: large
-#     padding_top: large
-#     padding_bottom: large
-#     background_color: secondary
 
   - type: grid_section
     title: Frequently Asked Questions
@@ -214,8 +149,8 @@ sections:
         content_align: left    
     
     
-    grid_cols: one
-    grid_gap_horiz: medium
+    grid_cols: two
+    grid_gap_horiz: large
     grid_gap_vert: small
     enable_cards: false
     align: center
