@@ -10,15 +10,15 @@ sections:
         url: "/aicontest/rules"
         style: primary
       - label: Register
-        url: "aicontest/register"
+        url: "/aicontest/register"
         style: secondary
 
     align: center
     padding_top: large
     padding_bottom: large
     background_color: primary
-    background_image: images/dlsprint/cover.jpg
-    background_image_opacity: 0
+    background_image: images/ai-contest/cover.jpg
+    background_image_opacity: 35
     background_image_size: cover
 
   - type: grid_section
@@ -67,7 +67,7 @@ sections:
           You will get a **time period of 1 week(+)** to submit, edit, re-submit your code, fighting against all the contestants to rise above the leaderboard. Experience the thrill of witnessing your code fight against other contestant's code live!!
 
           <br><br>
-          The contest will be hosted on [codingame](https://www.codingame.com/start). So participants are required to have an account in codingame. If you don't have an account, please open one as it takes only 1 minute and its completely free.
+          The contest will be hosted on [**codingame**](https://www.codingame.com/start). So participants are required to have an account in codingame. If you don't have an account, please open one as it takes only 1 minute and its completely free.
           
           <br><br>
 
@@ -157,10 +157,10 @@ sections:
       - title: Will there be any penalty for multiple submissions or late submissions?
         title_align: left
         content: >-
-          **NO!!** You will get a **time period of 1 week(+)** to submit, edit, re-submit your code as much as you want. The scoring will be done based on codingame's automated system, which accounts for submission time only for contestants tied to the same score. You can read about [codingame rules](https://www.codingame.com/rules)
+          **NO!!** You will get a **time period of 1 week(+)** to submit, edit, re-submit your code as much as you want. The scoring will be done based on codingame's automated system, which accounts for submission time only for contestants tied to the same score. You can read about [**codingame rules**](https://www.codingame.com/rules)
         content_align: left
 
-    grid_cols: three
+    grid_cols: two
     grid_gap_horiz: medium
     grid_gap_vert: small
     enable_cards: false
@@ -177,7 +177,7 @@ sections:
     title: What are you waiting for?
     actions:
       - label: Register
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSdvgwMrw6jO9ENHHIMBQEcC02ctjLVXxESYwPzLOi_XNU3OKw/viewform"
+        url: "/aicontest/register"
         style: secondary
         has_icon: true
         icon: arrow-right

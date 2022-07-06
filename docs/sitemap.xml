@@ -3,15 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/aicontest/register/</loc>
+    <loc>/aicontest/</loc>
   </url>
   
   <url>
     <loc>/aicontest/rules/</loc>
-  </url>
-  
-  <url>
-    <loc>/aicontest/</loc>
   </url>
   
   <url>
@@ -40,6 +36,10 @@
   
   <url>
     <loc>/privacy-policy/</loc>
+  </url>
+  
+  <url>
+    <loc>/aicontest/register/</loc>
   </url>
   
   <url>

@@ -14,6 +14,11 @@
         "has_secondary_nav": true,
         "secondary_nav_links": [
             {
+                "label": "AI Contest",
+                "url": "/aicontest",
+                "style": "link"
+            },
+            {
                 "label": "Hackathon",
                 "url": "/hackathon",
                 "style": "link"
