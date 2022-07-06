@@ -33,11 +33,9 @@ sections:
         image_position: left
         image_width: twenty-five
 
-      - title: Constraints
+      - title: Languages
         title_align: left
-        content: "- **Anyone from any university currently pursuing their undergrad** are eligible to participate!
-        - An account in [**codingame**](https://www.codingame.com/start)
-        - Any language starting from **C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#**"
+        content: "Any language starting from C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby C#"
         content_align: left
         image: images/2-tracks.svg
         image_alt: Section item 2 icon
@@ -99,6 +97,25 @@ sections:
     padding_top: medium
     padding_bottom: medium
     background_color: none
+
+
+    - type: features_section
+    title: Requirements & Constraints
+    features:
+      - content: >-
+        **Eligibility:** Anyone from any university currently pursuing their undergrad are eligible to participate!
+        <br><br>
+        **Account** An account in [**codingame**](https://www.codingame.com/start)
+        <br><br>
+        **Languages** Any language starting from C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#
+
+    align: left
+    feature_padding_vert: medium
+    align: center
+    padding_top: medium
+    padding_bottom: medium
+    background_color: none
+
 
 #   - type: grid_section
 #     title: Sponsors & Partners
