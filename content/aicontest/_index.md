@@ -95,29 +95,50 @@ sections:
     background_color: none
 
 
-  - type: features_section
-    title: Requirements & Constraints
-    features:
+  - type: grid_section
+    grid_items:
       - title: Eligibility
-        content: >-
+        content: |-
           Anyone from any university currently pursuing their undergrad are eligible to participate!
-        content_align: left
-
-      - title: Account
-        content: >-
+      - title: Create Account
+        content: |-
           An account in [**codingame**](https://www.codingame.com/start)
-        content_align: left
-
       - title: Languages
-        content: >-
+        content: |-
           Any language starting from **C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#**
-        content_align: left
-
-    feature_padding_vert: medium
+    grid_cols: three
+    grid_gap_horiz: medium
+    grid_gap_vert: medium
+    enable_cards: false
     align: center
     padding_top: medium
     padding_bottom: medium
     background_color: secondary
+
+
+#   - type: features_section
+#     title: Requirements & Constraints
+#     features:
+#       - title: Eligibility
+#         content: >-
+#           Anyone from any university currently pursuing their undergrad are eligible to participate!
+#         content_align: left
+
+#       - title: Account
+#         content: >-
+#           An account in [**codingame**](https://www.codingame.com/start)
+#         content_align: left
+
+#       - title: Languages
+#         content: >-
+#           Any language starting from **C/C++, Python, Java, Javascript, Kotlin, Bash, PHP, Ruby, C#**
+#         content_align: left
+
+#     feature_padding_vert: medium
+#     align: center
+#     padding_top: medium
+#     padding_bottom: medium
+#     background_color: secondary
 
 
 #   - type: grid_section
