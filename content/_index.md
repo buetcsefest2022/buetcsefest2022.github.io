@@ -49,7 +49,7 @@ sections:
         
       - title: ""
         title_align: center
-        content: "### [AI Contest](https://buetcsefest2022.com/ai-contest)"
+        content: "### [AI Contest](https://buetcsefest2022.com/aicontest)"
         content_align: left
         image: images/icons/ai-contest.svg
         image_alt: Section item 1 icon
