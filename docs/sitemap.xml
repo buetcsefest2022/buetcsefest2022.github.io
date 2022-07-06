@@ -1,31 +1,57 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
     <loc>/aicontest/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/aicontest/rules/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/dlsprint/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/dlsprint/rules/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/hackathon/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/sample/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/dlsprint/kaggle/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/privacy-policy/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/aicontest/register/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/dlsprint/register/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/hackathon/register/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/hackathon/rules/</loc>
   </url>
+  
 </urlset>
