@@ -16,113 +16,180 @@ sections:
     background_image_opacity: 80
     background_image_size: cover
 
+
+  - type: grid_section
+    title: Our Sponsors & Partners
+    subtitle: ""
+    align: center
+    grid_items:
+      - title: ""
+        subtitle: ""
+        title_align: center
+
+      - image: images/logo/optimizely.png
+        image_alt: Optimizely Logo
+        image_align: center
+        title: "Optimizely"
+        subtitle: "Title Sponsor"
+        title_align: center
+
+      - title: ""
+        subtitle: ""
+        title_align: center
+
+      - image: images/logo/dohatec.png
+        image_alt: Dohatec Logo
+        image_align: center
+        title: "Dohatec New Media"
+        subtitle: "Silver Sponsor"
+        title_align: center
+
+      - image: images/logo/brilliant-cloud.png
+        image_alt: Brilliant Cloud Logo
+        image_align: center
+        title: "Brilliant Cloud"
+        subtitle: "Silver Sponsor"
+        title_align: center
+
+      - image: images/logo/fiftytwo.png
+        image_alt: FiftyTwo Logo
+        image_align: center
+        title: "FiftyTwo Digital"
+        subtitle: "Co-Sponsor"
+        title_align: center
+
+      - image: images/logo/incepta.png
+        image_alt: Incepta Solutions logo
+        image_align: center
+        title: "Incepta Solutions"
+        subtitle: "Co-sponsor (DL Sprint)"
+        title_align: center
+
+      - image: images/logo/eblict.png
+        image_alt: EBL ICT logo
+        image_align: center
+        title: "EBLICT, ICT Divison BD"
+        subtitle: "Co-host (DL Sprint)"
+        title_align: center
+
+      - image: images/logo/bengali-ai.png
+        image_alt: Bengali AI Community logo
+        image_align: center
+        title: "Bengali.AI"
+        subtitle: "Partner (DL Sprint)"
+        title_align: center
+
+      - image: images/logo/somoy.png
+        image_alt: Somoy News logo
+        image_align: center
+        title: "Somoy TV"
+        subtitle: "Media Partner"
+        title_align: center
+
+      - image: images/logo/shout-black.png
+        image_alt: SHOUT logo
+        image_align: center
+        title: "SHOUT"
+        subtitle: "Media Partner"
+        title_align: center
+
+      - image: images/logo/ieee-cs-black.png
+        image_alt: BUET IEEE CS logo
+        image_align: center
+        title: "IEEE Computer Society BUET"
+        subtitle: "Co-host"
+        title_align: center
+
+    grid_cols: three
+    grid_gap_horiz: small
+    grid_gap_vert: small
+    padding_top: medium
+    padding_bottom: medium
+    background_color: white
+
   - type: grid_section
     title: Events In The Fest
     grid_items:
 
-      - title: ""
-        title_align: center
-        content: "### [Deep Learning Sprint](https://buetcsefest2022.com/dlsprint)"
-        content_align: left
+      - title: "Deep Learning Sprint"
+        title_align: left
         image: images/icons/dlsprint.svg
         image_alt: Section item 1 icon
         image_position: left
         image_width: twenty-five
 
-      - title: ""
-        title_align: center
-        content: "### [Hackathon](https://buetcsefest2022.com/hackathon)"
-        content_align: left
+      - title: "Hackathon"
+        title_align: left
         image: images/icons/hackathon.svg
         image_alt: Section item 1 icon
         image_position: left
         image_width: twenty-five
 
-      - title: ""
-        title_align: center
-        content: "### [BUET IUPC](https://buetcsefest2022.com/iupc)"
-        content_align: left
+      - title: "BUET IUPC"
+        title_align: left
         image: images/icons/iupc.svg
         image_alt: Section item 1 icon
         image_position: left
         image_width: twenty-five
         
-      - title: ""
-        title_align: center
-        content: "### [AI Contest](https://buetcsefest2022.com/aicontest)"
-        content_align: left
+      - title: "AI Contest"
+        title_align: left
         image: images/icons/ai-contest.svg
         image_alt: Section item 1 icon
         image_position: left
         image_width: twenty-five
 
-      - title: ""
-        title_align: center
-        content: "### [Picture Puzzle](https://punzzle.buetcsefest2022.com/)"
-        content_align: left
+      - title: "Picture Puzzle"
+        title_align: left
         image: images/icons/punzzle.svg
         image_alt: Section item 1 icon
         image_position: left
         image_width: twenty-five
 
-      - title: ""
-        title_align: center
-        content: "### [Treasure Hunt](https://hunt.buetcsefest2022.com/)"
-        content_align: left
+      - title: "Treasure Hunt"
+        title_align: left
         image: images/icons/hunt.svg
         image_alt: Section item 1 icon
         image_position: left
         image_width: twenty-five
 
-      - title: ""
-        title_align: center
-        content: "### Meme Contest"
-        content_align: left
+      - title: "Meme Contest"
+        title_align: left
         image: images/icons/meme.svg
         image_alt: Section item 1 icon
         image_position: left
         image_width: twenty-five
 
-      - title: ""
-        title_align: center
-        content: "### Job Fair"
-        content_align: left
+      - title: "Job Fair"
+        title_align: left
         image: images/icons/job-fair.svg
         image_alt: Section item 1 icon
         image_position: left
         image_width: twenty-five
 
-      - title: ""
-        title_align: center
-        content: "### Indoor Games"
-        content_align: left
+      - title: "Indoor Games"
+        title_align: left
         image: images/icons/games.svg
         image_alt: Section item 1 icon
         image_position: left
         image_width: twenty-five
 
-      - title: ""
-        title_align: center
-        content: "### Cultural Night"
-        content_align: left
+      - title: "Cultural Night"
+        title_align: left
         image: images/icons/cultural.svg
         image_alt: Section item 1 icon
         image_position: left
         image_width: twenty-five
 
-      - title: ""
-        title_align: center
-        content: "### Valorant Tournament"
-        content_align: left
+      - title: "Valorant Tournament"
+        title_align: left
         image: images/icons/valorant.svg
         image_alt: Section item 1 icon
         image_position: left
         image_width: twenty-five
 
-      - title: ""
-        title_align: center
-        content: "### FIFA Tournament"
-        content_align: left
+      - title: "FIFA Tournament"
+        title_align: left
         image: images/icons/fifa.svg
         image_alt: Section item 1 icon
         image_position: left
