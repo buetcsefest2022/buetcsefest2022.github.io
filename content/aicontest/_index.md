@@ -166,7 +166,7 @@ sections:
           <br><br>
           
           **Facebook Page:** https://fb.me/e/1IRx8qUCY
-          <br><br>
+          <br>
 
           **Email:** aicontest@buetcsefest2022.com
 
