@@ -45,9 +45,9 @@ sections:
         image_position: left
         image_width: twenty-five
 
-      - title: "200K+ Prize Money"
+      - title: "250K Prize Money"
         title_align: left
-        content: "Participate and win from a total prize pool of **200K+ BDT**"
+        content: "Participate and win from a total prize pool of **250K BDT**"
         content_align: left
         image: images/20-speakers.svg
         image_alt: Section item 3 icon
@@ -59,6 +59,26 @@ sections:
     enable_cards: false
     align: center
     background_color: secondary
+
+
+
+  - type: features_section
+    title: Prize Money
+    features:
+      - content: >-
+          🥇 First Place - BDT 100,000 
+          🥈 Second Place - BDT 60,000 
+          🥉 Third Place - BDT 30,000
+          🚀 𝐁𝐔𝐄𝐓 𝐫𝐢𝐬𝐢𝐧𝐠 𝐭𝐞𝐚𝐦 - BDT 30,000
+          ⭐️𝐁𝐞𝐬𝐭 𝐊𝐚𝐠𝐠𝐥𝐞 𝐍𝐨𝐭𝐞𝐛𝐨𝐨𝐤𝐬 - BDT 30,000
+        align: center
+    feature_padding_vert: medium
+    align: center
+    padding_top: medium
+    padding_bottom: medium
+    background_color: none
+
+
 
   - type: features_section
     title: Event Description
