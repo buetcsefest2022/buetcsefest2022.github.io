@@ -66,11 +66,15 @@ sections:
     title: Prize Money
     features:
       - content: >-
-          🥇 First Place - BDT 100,000 
-          🥈 Second Place - BDT 60,000 
-          🥉 Third Place - BDT 30,000
-          🚀 𝐁𝐔𝐄𝐓 𝐫𝐢𝐬𝐢𝐧𝐠 𝐭𝐞𝐚𝐦 - BDT 30,000
-          ⭐️𝐁𝐞𝐬𝐭 𝐊𝐚𝐠𝐠𝐥𝐞 𝐍𝐨𝐭𝐞𝐛𝐨𝐨𝐤𝐬 - BDT 30,000
+          🥇 **First Place** - BDT 100,000
+          <br>
+          🥈 **Second Place** - BDT 60,000
+          <br> 
+          🥉 **Third Place** - BDT 30,000
+          <br>
+          🚀 **BUET Rising Team** - BDT 30,000
+          <br>
+          ⭐️ **Best Kaggle Notebooks** - BDT 30,000
         align: center
     feature_padding_vert: medium
     align: center
