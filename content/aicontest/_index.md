@@ -146,12 +146,22 @@ sections:
         title_align: left
         content: >-
           **OF COURSE!!** This contest is designed so that even beginners can have fun participating. And we will be providing a skeleton sample code from where you can start.
-        content_align: left    
+        content_align: left
+        
+      - title: I am not an undergrad student. Can I participate?
+        title_align: left
+        content: >-
+          **YES!!** This contest is going to be open for all. Meaning everyone can participate in two ways-
+          <br>
+          **Registered Participants:** Undergrad students who have registered will be eligible for the prize money.
+          <br>
+          **Out of Competition:** Anyone not registered can directly join the game and participate. This is so that everyone gets the opportunity participate and play the game. However, they won’t be eligible for the prize money.
+        content_align: left 
     
     
     grid_cols: two
     grid_gap_horiz: large
-    grid_gap_vert: small
+    grid_gap_vert: medium
     enable_cards: false
     align: center
     padding_top: large
