@@ -57,6 +57,31 @@ sections:
     align: center
     background_color: secondary
 
+
+
+
+  - type: features_section
+    title: Game is now up!!
+    features:
+      - content: >-
+          **Link:** https://www.codingame.com/contribute/view/24899fba3db2b90428fb4f3ecb1505df954dd
+          <br><br>
+
+          Use the link above to navigate to the game. Click on **preview** to get to the ide where you can submit the code.
+
+          <br><br>
+
+          Use **play my code** to check if your code is working properly. When satisfied with your code, use **test in arena** to submit your code into the arena. Upon submission, your code will then fight against other players and you can see yourself on the leaderboard
+
+        align: center
+    feature_padding_vert: medium
+    align: center
+    padding_top: medium
+    padding_bottom: medium
+    background_color: none
+
+
+
   - type: features_section
     title: Event Description
     features:
