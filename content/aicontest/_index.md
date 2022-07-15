@@ -64,7 +64,7 @@ sections:
     title: Game is now up!!
     features:
       - content: >-
-          **Link:** https://www.codingame.com/contribute/view/24899fba3db2b90428fb4f3ecb1505df954dd
+          **Contest Link:** https://www.codingame.com/contribute/view/24899fba3db2b90428fb4f3ecb1505df954dd
           <br><br>
 
           Use the link above to navigate to the game. Click on **preview** to get to the ide where you can submit the code.
@@ -73,7 +73,7 @@ sections:
 
           Use **play my code** to check if your code is working properly. When satisfied with your code, use **test in arena** to submit your code into the arena. Upon submission, your code will then fight against other players and you can see yourself on the leaderboard
 
-        align: center
+        align: left
     feature_padding_vert: medium
     align: center
     padding_top: medium
