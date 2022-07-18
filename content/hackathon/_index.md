@@ -4,7 +4,7 @@ sections:
   - type: hero_section
     title: "BUET CSE Fest 2022 Hackathon"
     subtitle: "Presented by Optimizely"
-    content: '**July 28 - July 29, 2022**'
+    content: '**Aug 4 - Aug 5, 2022**'
     actions:
       - label: Rules
         url: "/hackathon/rules"
@@ -23,7 +23,7 @@ sections:
 
   - type: grid_section
     grid_items:
-      - title: "July 28 - July 29"
+      - title: "Aug 4 - Aug 5"
         title_align: left
         content: >-
           Attend a 24hr long, on-premise hackathon at Department of CSE, BUET
@@ -74,19 +74,19 @@ sections:
           </tr>
           <tr>
               <td>Arrival</td>
-              <td>8:00 am, 28th July</td>
+              <td>8:00 am, 4th Aug</td>
           </tr>
           <tr>
               <td>Sprint</td>
-              <td>10:00 am 28th July - 10:00 am 29th July</td>
+              <td>10:00 am 4th Aug - 10:00 am 5th Aug</td>
           </tr>
           <tr>
               <td>Job Seminar</td>
-              <td>10:00 am 29th July - 12:45 pm 29th July</td>
+              <td>10:00 am 5th Aug - 12:45 pm 5th Aug</td>
           </tr>
           <tr>
               <td>Final Judgement</td>
-              <td>2:15 pm 29th July - 5:00 pm 29th July</td>
+              <td>2:15 pm 5th Aug - 5:00 pm 5th Aug</td>
           </tr>
           </table>
 
