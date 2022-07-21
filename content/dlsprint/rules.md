@@ -5,9 +5,9 @@ layout: page
 ## Rules and Regulations
 
 1.  **Event details:**
-    - Phase 1 Part 1: will be held in Kaggle from July 1st to July 24th. Participants are expected to build and train their model during this phase.
-    - Phase 1 Part 2: will be held in Kaggle on July 25th. Participants will infer their model on a new dataset. The top 15 teams from this round will be selected for Phase 2.
-    - Phase 2: will be held onsite at the Department of CSE, BUET, on July 29th. Only invited participants can participate. Participants will infer their model on a new dataset and present their methods live in front of the judges’ panel. The address is *ECE Building, West Palashi, Bangladesh University of Engineering and Technology, Dhaka-1000, Bangladesh.*
+    - Phase 1 Part 1: will be held in Kaggle from July 1st to August 24th. Participants are expected to build and train their model during this phase.
+    - Phase 1 Part 2: will be held in Kaggle on August 25th. Participants will infer their model on a new dataset. The top 15 teams from this round will be selected for Phase 2.
+    - Phase 2: will be held onsite at the Department of CSE, BUET, on September 2nd. Only invited participants can participate. Participants will infer their model on a new dataset and present their methods live in front of the judges’ panel. The address is *ECE Building, West Palashi, Bangladesh University of Engineering and Technology, Dhaka-1000, Bangladesh.*
 
 2.  **Prize details:**
     - 1st Prize: 100K BDT

@@ -4,7 +4,7 @@ sections:
   - type: hero_section
     title: "Deep Learning Sprint 2022"
     subtitle: Presented by BUET CSE Fest 2022 & Bengali.AI Community
-    content: July 1 - July 29, 2022
+    content: July 01 - Sept 02, 2022
     actions:
       - label: Rules
         url: "/dlsprint/rules"
@@ -26,7 +26,7 @@ sections:
 
   - type: grid_section
     grid_items:
-      - title: "July 1 - July 29"
+      - title: "July 01 - Sept 02"
         title_align: left
         content: >-
           A month long competition with both online and on-site rounds.
@@ -38,7 +38,7 @@ sections:
 
       - title: 2 Phases
         title_align: left
-        content: "<a href='https://www.kaggle.com/competitions/dlsprint' target='_blank'>**Phase 1:** July 1 - July 25</a><br>**Phase 2:** July 29"
+        content: "<a href='https://www.kaggle.com/competitions/dlsprint' target='_blank'>**Phase 1:** July 01 - Aug 25</a><br>**Phase 2:** Sept 02"
         content_align: left
         image: images/2-tracks.svg
         image_alt: Section item 2 icon
@@ -106,13 +106,13 @@ sections:
               <th></th>  <th>Location</th>                 <th>Date & Time</th>  
             </tr>
             <tr>
-              <td>Phase 1</td>  <td><a href='https://www.kaggle.com/competitions/dlsprint' target='_blank'>Kaggle</a></td>             <td>July 1 - July 25, 2022</td>
+              <td>Phase 1</td>  <td><a href='https://www.kaggle.com/competitions/dlsprint' target='_blank'>Kaggle</a></td>             <td>July 01 - Aug 25, 2022</td>
             </tr>
             <tr>
-              <td>Phase 2</td>  <td>Dept of CSE, BUET</td>  <td>July 29, 2022</td>
+              <td>Phase 2</td>  <td>Dept of CSE, BUET</td>  <td>Sept 02, 2022</td>
             </tr>
             <tr>
-              <td>Prize Giving</td>  <td>Dept of CSE, BUET</td>  <td>*August 6, 2022</td>
+              <td>Prize Giving</td>  <td>Dept of CSE, BUET</td>  <td>*TBA</td>
             </tr>
           </table>
 
@@ -182,7 +182,7 @@ sections:
       - title: Will it be held online?
         title_align: left
         content: >-
-          The first phase will be held online and hosted on Kaggle.  The competition link will be available on July 1, 2022. The final round will be held on the premises of the Department of CSE, BUET
+          The first phase will be held online and hosted on Kaggle.  The competition link will be available on July 01, 2022. The final round will be held on the premises of the Department of CSE, BUET
         content_align: left
 
       - title: Are the participants required to attend the competition physically?
