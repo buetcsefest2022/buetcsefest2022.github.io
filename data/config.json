@@ -29,8 +29,8 @@
                 "style": "link"
             },
             {
-                "label": "Coming Soon",
-                "url": "#",
+                "label": "Facebook Event",
+                "url": "https://www.facebook.com/buetcsefest2022/",
                 "style": "primary"
             }
         ],
