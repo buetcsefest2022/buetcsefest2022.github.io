@@ -1,0 +1,275 @@
+/*  ================================================
+	Author: Codeberry
+	Name: Comet
+	URL: https://codeberry.net/product/comet
+	Version: 2.0
+	================================================ */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,500");
+/* Google Fonts */
+h2, h1 {
+  font-size: inherit;
+  font-weight: 400;
+  margin: 0;
+  line-height: 0.8;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  font: 15px/1.5 "Roboto Mono", Helvetica, sans-serif;
+  color: #ebebea;
+  background: #222222;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  position: relative;
+  border-bottom: 1px solid #f8f8f6;
+  text-decoration: none;
+}
+a:hover {
+  color: #fccd03;
+  border-bottom: 1px solid #fccd03;
+}
+a:focus {
+  color: #fccd03;
+  border-bottom: 1px solid #fccd03;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+:focus {
+  outline: 0;
+}
+
+.main-text {
+  font: 500 20px/1 "Roboto Mono", Helvetica, sans-serif;
+}
+
+.main-text-small {
+  font-size: 15px;
+}
+
+.logo {
+  background: url("../../assets/images/logo.svg") no-repeat;
+  background-position: top left, top left;
+  background-repeat: no-repeat;
+  background-size: auto, auto 100%;
+  width: 42px;
+  height: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 42px;
+    height: 50px;
+  }
+
+  .section {
+    display: block;
+    min-height: 0;
+  }
+
+  .column-section-main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+  }
+
+  .col-section {
+    margin-bottom: 15vw;
+  }
+
+  .bio {
+    font-size: 18px;
+  }
+}
+.section {
+  z-index: 1;
+  position: relative;
+  padding: 96px 0 96px 96px;
+  width: calc(100vw - 96px - 7em);
+  display: -webkit-box;
+  display: flex;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.column-section {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+
+.section-bio {
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.col-section {
+  width: 100%;
+  max-width: 382px;
+}
+
+.bio {
+  font-size: 20px;
+  font-weight: 100;
+  max-width: 700px;
+}
+
+.list {
+  margin-top: 3.2em;
+}
+
+.list-item {
+  margin-top: 0.25em;
+  margin-bottom: 2em;
+}
+.list-item:last-child {
+  margin-bottom: -0.4em;
+}
+
+.scrunch {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+.scrunch:after {
+  background: #222222;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  position: fixed;
+  right: 96px;
+  bottom: 92px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-align: end;
+  align-items: flex-end;
+}
+
+.footer-links {
+  margin-top: 1em;
+  line-height: 1;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    /* padding: 48px 0 24px 24px; */
+    width: calc(100vw - 48px - 7em);
+  }
+
+  .footer {
+    right: 48px;
+    bottom: 48px;
+  }
+}
+@media (max-width: 950px) {
+  .section {
+    padding: 7.5vw;
+    width: 100%;
+  }
+
+  .footer {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    padding: 0 7.5vw 7.5vw;
+    -webkit-box-align: start;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    display: inline;
+  }
+}
+@media (hover: hover) {
+  .footer-links:nth-child(odd):hover ~ .scrunch {
+    background-color: #d9534f;
+  }
+  .footer-links:nth-child(2n):hover ~ .scrunch {
+    background-color: #428bca;
+  }
+
+  .link-email:hover ~ .scrunch:after {
+    -webkit-animation: one 1s 0.25s linear forwards;
+    animation: one 1s 0.25s linear forwards;
+  }
+
+  .link-behance:hover ~ .scrunch:after {
+    -webkit-animation: two 1s 0.25s linear forwards;
+    animation: two 1s 0.25s linear forwards;
+  }
+
+  .link-dribbble:hover ~ .scrunch:after {
+    -webkit-animation: three 1s 0.25s linear forwards;
+    animation: three 1s 0.25s linear forwards;
+  }
+
+  .link-linkedin:hover ~ .scrunch:after {
+    -webkit-animation: four 1s 0.25s linear forwards;
+    animation: four 1s 0.25s linear forwards;
+  }
+
+  .link-twitter:hover ~ .scrunch:after {
+    -webkit-animation: five 1s 0.25s linear forwards;
+    animation: five 1s 0.25s linear forwards;
+  }
+
+  .link-instagram:hover ~ .scrunch:after {
+    -webkit-animation: six 1s 0.25s linear forwards;
+    animation: six 1s 0.25s linear forwards;
+  }
+
+  .link-site:hover ~ .scrunch:after {
+    -webkit-animation: seven 1s 0.25s linear forwards;
+    animation: seven 1s 0.25s linear forwards;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
